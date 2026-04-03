@@ -1,0 +1,1114 @@
+[
+  {
+    "id": "E001",
+    "incident_text": "My NIC and phone number were leaked in a hospital database breach.",
+    "pii_tags": [
+      "id",
+      "phone"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:10(b)",
+      "CCA:7(a)"
+    ],
+    "notes": "Classic database breach scenario."
+  },
+  {
+    "id": "E002",
+    "incident_text": "Someone created a fake Facebook profile with my photos and name and is messaging my contacts.",
+    "pii_tags": [
+      "name",
+      "img_exposed",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "OSA:18(b)",
+      "OSA:20(1)"
+    ],
+    "notes": "WhatsApp/Facebook DP impersonation."
+  },
+  {
+    "id": "E003",
+    "incident_text": "My NIC was used to register a SIM card and take out a microloan without my knowledge.",
+    "pii_tags": [
+      "id",
+      "phone"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "TCA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "TCA:46C",
+      "PDPA:10(a)",
+      "CCA:4(a)"
+    ],
+    "notes": "SIM fraud + identity theft."
+  },
+  {
+    "id": "E004",
+    "incident_text": "My home address and workplace were posted in a Facebook group to encourage people to attack me.",
+    "pii_tags": [
+      "addr",
+      "name"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Doxxing with address disclosure."
+  },
+  {
+    "id": "E005",
+    "incident_text": "My ex shared intimate photos of me on a Telegram group without my consent.",
+    "pii_tags": [
+      "img_exposed"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:7(a)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Non-consensual intimate image sharing."
+  },
+  {
+    "id": "E006",
+    "incident_text": "My Gmail was hacked via a phishing link and all my messages were read. The password was changed.",
+    "pii_tags": [
+      "email"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "ETA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "CCA:4(a)",
+      "ETA:12(1)(a)"
+    ],
+    "notes": "Email account takeover via phishing."
+  },
+  {
+    "id": "E007",
+    "incident_text": "A mobile app is sharing my GPS location and contact list with advertising companies without disclosing this in its privacy policy.",
+    "pii_tags": [
+      "location",
+      "phone"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:6(1)b)",
+      "PDPA:7(a)",
+      "PDPA:11(a)"
+    ],
+    "notes": "Unauthorized data processing by app."
+  },
+  {
+    "id": "E008",
+    "incident_text": "Someone is using my WhatsApp display picture to create a fake account and borrow money from my family.",
+    "pii_tags": [
+      "img_exposed",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "OSA:18(c)",
+      "TCA:46B"
+    ],
+    "notes": "WhatsApp DP impersonation — high-frequency SL case."
+  },
+  {
+    "id": "E009",
+    "incident_text": "My name, DOB, and NIC number were found in an online data dump sold on the dark web.",
+    "pii_tags": [
+      "name",
+      "dob",
+      "id"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "CCA:7(b)",
+      "CCA:7(c)"
+    ],
+    "notes": "Dark web data dump."
+  },
+  {
+    "id": "E010",
+    "incident_text": "My Instagram account was hacked and the attacker posted content and messaged my followers.",
+    "pii_tags": [
+      "username",
+      "email"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "CCA:5",
+      "OSA:20(1)"
+    ],
+    "notes": "Social media account takeover."
+  },
+  {
+    "id": "E011",
+    "incident_text": "My full address, phone number and school were posted on a political Facebook page to harass me.",
+    "pii_tags": [
+      "addr",
+      "phone",
+      "name"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)",
+      "PDPA:6(1)a)"
+    ],
+    "notes": "Targeted doxxing with multiple personal details."
+  },
+  {
+    "id": "E012",
+    "incident_text": "Someone registered a company using a forged copy of my NIC without my knowledge.",
+    "pii_tags": [
+      "id",
+      "name"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "PDPA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "CCA:4(a)",
+      "CCA:4(b)"
+    ],
+    "notes": "Identity theft for corporate fraud."
+  },
+  {
+    "id": "E013",
+    "incident_text": "A hospital employee shared my medical records with a third party without authorization.",
+    "pii_tags": [
+      "name",
+      "id",
+      "addr"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:7(a)",
+      "PDPA:12(1)(a)"
+    ],
+    "notes": "Healthcare data breach by insider."
+  },
+  {
+    "id": "E014",
+    "incident_text": "My bank account was accessed from an unknown location and money was transferred after my OTP was stolen.",
+    "pii_tags": [
+      "id",
+      "phone"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "ETA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(b)",
+      "CCA:4(a)",
+      "ETA:7(a)"
+    ],
+    "notes": "OTP-based account takeover / SIM swap."
+  },
+  {
+    "id": "E015",
+    "incident_text": "My private photos were edited to create fake nude images and circulated in WhatsApp groups.",
+    "pii_tags": [
+      "img_exposed"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:7(a)",
+      "CCA:7(a)"
+    ],
+    "notes": "Deepfake / morphed image harassment."
+  },
+  {
+    "id": "E016",
+    "incident_text": "Someone is sending threatening calls to my phone number that was exposed in a data leak.",
+    "pii_tags": [
+      "phone"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "TCA",
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "TCA:46B",
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Phone harassment following data leak."
+  },
+  {
+    "id": "E017",
+    "incident_text": "A fake LinkedIn profile was created using my professional photo, name, and employer details.",
+    "pii_tags": [
+      "name",
+      "img_exposed",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA",
+      "ETA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "OSA:18(b)",
+      "ETA:12(1)(a)"
+    ],
+    "notes": "Professional impersonation on LinkedIn."
+  },
+  {
+    "id": "E018",
+    "incident_text": "My personal email and password were found in a credential dump and used to access multiple accounts.",
+    "pii_tags": [
+      "email"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "CCA:4(a)",
+      "CCA:10"
+    ],
+    "notes": "Credential stuffing attack."
+  },
+  {
+    "id": "E019",
+    "incident_text": "The company I work for shared employee NIC numbers and salaries with a recruitment firm without consent.",
+    "pii_tags": [
+      "id",
+      "name"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:6(1)b)",
+      "PDPA:7(a)",
+      "PDPA:14(1)"
+    ],
+    "notes": "Employer unauthorized data sharing."
+  },
+  {
+    "id": "E020",
+    "incident_text": "My date of birth, name, and address are being used to send targeted scam calls claiming to be from a bank.",
+    "pii_tags": [
+      "name",
+      "dob",
+      "addr",
+      "phone"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "TCA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "TCA:46B",
+      "PDPA:10(a)",
+      "CCA:4(a)"
+    ],
+    "notes": "Vishing / scam using personal data."
+  },
+  {
+    "id": "E021",
+    "incident_text": "A mobile banking app leaked my NIC and account details to a third-party analytics company without my consent.",
+    "pii_tags": [
+      "id",
+      "phone",
+      "name"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA",
+      "TCA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:7(a)",
+      "PDPA:6(1)a)"
+    ],
+    "notes": "Unauthorized third-party data sharing."
+  },
+  {
+    "id": "E022",
+    "incident_text": "My employer shared my medical records and NIC with an insurance provider without informing me.",
+    "pii_tags": [
+      "id",
+      "name",
+      "dob"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:11(a)",
+      "PDPA:7(a)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Employer data sharing without notice."
+  },
+  {
+    "id": "E023",
+    "incident_text": "A government website accidentally displayed my full name, NIC number, and home address in a public search result.",
+    "pii_tags": [
+      "name",
+      "id",
+      "addr"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA",
+      "RTI"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:10(b)",
+      "RTI:5(1)(a)"
+    ],
+    "notes": "Government data exposure."
+  },
+  {
+    "id": "E024",
+    "incident_text": "My Uber ride history and home location were visible to anyone who knew my email address due to a privacy setting bug.",
+    "pii_tags": [
+      "email",
+      "location",
+      "addr"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:10(b)",
+      "PDPA:7(c)"
+    ],
+    "notes": "Location data exposure via app bug."
+  },
+  {
+    "id": "E025",
+    "incident_text": "A Colombo private hospital published a list of patients with their names and diagnosis on their WhatsApp status by mistake.",
+    "pii_tags": [
+      "name",
+      "id"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:10(b)",
+      "PDPA:11(a)"
+    ],
+    "notes": "Medical data breach via social media."
+  },
+  {
+    "id": "E026",
+    "incident_text": "Someone used my NIC photocopy to open a Mobitel prepaid SIM and sent threatening messages to politicians.",
+    "pii_tags": [
+      "id",
+      "phone"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "TCA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "TCA:46C",
+      "CCA:4(a)"
+    ],
+    "notes": "SIM fraud with Penal Code cheating by personation."
+  },
+  {
+    "id": "E027",
+    "incident_text": "My passport details were used to apply for a credit card from a finance company in Kandy. I only found out when debt collectors called.",
+    "pii_tags": [
+      "id",
+      "name",
+      "phone",
+      "addr"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "PDPA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "CCA:4(b)"
+    ],
+    "notes": "Passport-based financial fraud."
+  },
+  {
+    "id": "E028",
+    "incident_text": "My old NIC number was used to register a company at the Registrar of Companies. I received tax notices for a business I never owned.",
+    "pii_tags": [
+      "id",
+      "name"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:4(a)"
+    ],
+    "notes": "NIC used for fraudulent company registration."
+  },
+  {
+    "id": "E029",
+    "incident_text": "A scammer cloned my Dialog number via a fake SIM replacement request and accessed my bank OTPs to steal money.",
+    "pii_tags": [
+      "id",
+      "phone"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "TCA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "TCA:46C",
+      "CCA:4(a)",
+      "TCA:52(a)"
+    ],
+    "notes": "SIM swap fraud with financial theft."
+  },
+  {
+    "id": "E030",
+    "incident_text": "Someone forged a power of attorney with my name and NIC and sold my family land in Galle without my knowledge.",
+    "pii_tags": [
+      "id",
+      "name",
+      "addr"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [],
+    "expected_top_clauses": [],
+    "notes": "Forged legal document. Tests Penal Code forgery clauses."
+  },
+  {
+    "id": "E031",
+    "incident_text": "Someone created a fake Instagram account with my name and photos and is catfishing people, asking for money.",
+    "pii_tags": [
+      "name",
+      "img_exposed",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "OSA:18(c)"
+    ],
+    "notes": "Catfishing with financial fraud."
+  },
+  {
+    "id": "E032",
+    "incident_text": "A fake Twitter account using my name and job title is posting political hate speech, and my real employer warned me.",
+    "pii_tags": [
+      "name",
+      "username",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "OSA:20(1)"
+    ],
+    "notes": "Impersonation + hate speech."
+  },
+  {
+    "id": "E033",
+    "incident_text": "Someone is using my WhatsApp display picture and name to message my relatives asking for urgent money transfers.",
+    "pii_tags": [
+      "name",
+      "phone",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA",
+      "TCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "TCA:46B"
+    ],
+    "notes": "WhatsApp DP impersonation targeting contacts."
+  },
+  {
+    "id": "E034",
+    "incident_text": "A fake LinkedIn profile using my photo, NIC, and work history is being used to scam companies into hiring a different person.",
+    "pii_tags": [
+      "name",
+      "id",
+      "img_exposed",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)"
+    ],
+    "notes": "Professional identity theft via LinkedIn."
+  },
+  {
+    "id": "E035",
+    "incident_text": "Someone duplicated my Viber profile and is sending messages to my business clients pretending to be me, requesting payments.",
+    "pii_tags": [
+      "name",
+      "phone",
+      "impersonate"
+    ],
+    "incident_type": "IMPERSONATION",
+    "expected_laws": [
+      "OSA",
+      "TCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:18(a)",
+      "OSA:18(c)",
+      "TCA:46B"
+    ],
+    "notes": "Viber impersonation for business fraud."
+  },
+  {
+    "id": "E036",
+    "incident_text": "After I posted a political opinion, my home address, phone number, and photo were shared in a political Telegram group telling people to teach me a lesson.",
+    "pii_tags": [
+      "addr",
+      "phone",
+      "name",
+      "img_exposed"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Political doxxing with threats."
+  },
+  {
+    "id": "E037",
+    "incident_text": "My NIC, workplace, and daily commute route were posted on a revenge Facebook page after I broke up with someone.",
+    "pii_tags": [
+      "id",
+      "addr",
+      "location",
+      "name"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Relationship revenge doxxing."
+  },
+  {
+    "id": "E038",
+    "incident_text": "A student posted my children's school name, our home address, and my phone number in a school parents' WhatsApp group, claiming I am a bad parent.",
+    "pii_tags": [
+      "name",
+      "addr",
+      "phone"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Doxxing with defamation in community group."
+  },
+  {
+    "id": "E039",
+    "incident_text": "An anonymous account shared my vehicle registration number, home address, and workplace on a YouTube video accusing me of corruption.",
+    "pii_tags": [
+      "name",
+      "addr",
+      "id"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Public doxxing via YouTube."
+  },
+  {
+    "id": "E040",
+    "incident_text": "After reporting a scam to police, the suspects posted my name, phone number, and home address on social media calling me a snitch.",
+    "pii_tags": [
+      "name",
+      "phone",
+      "addr"
+    ],
+    "incident_type": "DOXXING",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Retaliatory doxxing with threats."
+  },
+  {
+    "id": "E041",
+    "incident_text": "My ex-boyfriend shared my intimate photos on a Telegram group with hundreds of members after our breakup.",
+    "pii_tags": [
+      "img_exposed",
+      "name"
+    ],
+    "incident_type": "IMAGE_ABUSE",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Revenge porn via Telegram."
+  },
+  {
+    "id": "E042",
+    "incident_text": "Someone used AI to create deepfake nude images of me using my Facebook profile photos and shared them on a porn site.",
+    "pii_tags": [
+      "img_exposed",
+      "name",
+      "username"
+    ],
+    "incident_type": "IMAGE_ABUSE",
+    "expected_laws": [
+      "OSA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "OSA:18(c)",
+      "CCA:7(a)"
+    ],
+    "notes": "Deepfake abuse. Tests OSA + CCA."
+  },
+  {
+    "id": "E043",
+    "incident_text": "Someone is threatening to publish my private photos unless I pay them LKR 500,000. They sent samples to prove they have the images.",
+    "pii_tags": [
+      "img_exposed",
+      "name",
+      "phone"
+    ],
+    "incident_type": "IMAGE_ABUSE",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Sextortion with financial demand."
+  },
+  {
+    "id": "E044",
+    "incident_text": "My morphed photo with offensive text overlay was circulated in multiple WhatsApp groups in my town.",
+    "pii_tags": [
+      "img_exposed",
+      "name"
+    ],
+    "incident_type": "IMAGE_ABUSE",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)"
+    ],
+    "notes": "Morphed image harassment. Tests PC defamation."
+  },
+  {
+    "id": "E045",
+    "incident_text": "A classmate secretly recorded me in the changing room and shared the video on a private Discord server.",
+    "pii_tags": [
+      "img_exposed"
+    ],
+    "incident_type": "IMAGE_ABUSE",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Voyeuristic recording + distribution."
+  },
+  {
+    "id": "E046",
+    "incident_text": "My Gmail account was hacked and the attacker read all my emails with personal contracts, NIC scans, and bank statements.",
+    "pii_tags": [
+      "email",
+      "id",
+      "name"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "CCA:3(b)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Email account takeover with data theft."
+  },
+  {
+    "id": "E047",
+    "incident_text": "Someone got into my HNB internet banking by answering my security questions with information from my leaked NIC and DOB.",
+    "pii_tags": [
+      "id",
+      "dob",
+      "name"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:4(a)",
+      "CCA:4(b)"
+    ],
+    "notes": "Banking takeover via leaked personal data."
+  },
+  {
+    "id": "E048",
+    "incident_text": "My Dialog self-care portal was accessed after someone ported my number and they changed my package and viewed my call records.",
+    "pii_tags": [
+      "phone",
+      "id"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "TCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "TCA:52(a)",
+      "TCA:46C"
+    ],
+    "notes": "Telecom account takeover."
+  },
+  {
+    "id": "E049",
+    "incident_text": "A hacker accessed my Daraz account, changed the delivery address, and ordered items using my saved payment card.",
+    "pii_tags": [
+      "email",
+      "addr",
+      "name"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:4(a)",
+      "CCA:5"
+    ],
+    "notes": "E-commerce account takeover with fraud."
+  },
+  {
+    "id": "E050",
+    "incident_text": "My company email was accessed by a former colleague who forwarded confidential client data to a competitor.",
+    "pii_tags": [
+      "email",
+      "name"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "CCA:10",
+      "PDPA:10(a)"
+    ],
+    "notes": "Corporate espionage via email."
+  },
+  {
+    "id": "E051",
+    "incident_text": "An anonymous Instagram account has been sending me threatening DMs every day for a month, mentioning my home address.",
+    "pii_tags": [
+      "name",
+      "addr",
+      "username"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "OSA:18(a)"
+    ],
+    "notes": "Cyberstalking with threats."
+  },
+  {
+    "id": "E052",
+    "incident_text": "A group of students created a hate page targeting me with racial slurs and shared it across school WhatsApp groups.",
+    "pii_tags": [
+      "name",
+      "username"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "OSA:18(a)"
+    ],
+    "notes": "Cyberbullying + racial hate speech."
+  },
+  {
+    "id": "E053",
+    "incident_text": "My phone number was posted on a dating site with sexually suggestive text, and I am receiving dozens of calls from strangers daily.",
+    "pii_tags": [
+      "phone",
+      "name"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA",
+      "TCA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "TCA:46B"
+    ],
+    "notes": "Phone number posted for harassment."
+  },
+  {
+    "id": "E054",
+    "incident_text": "After leaving a bad review, a restaurant owner published my name, photo, and email on their Facebook page calling me a liar and encouraging people to harass me.",
+    "pii_tags": [
+      "name",
+      "email",
+      "img_exposed"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)",
+      "PDPA:10(a)"
+    ],
+    "notes": "Retaliatory public harassment + defamation."
+  },
+  {
+    "id": "E055",
+    "incident_text": "Someone keeps creating new accounts to message my family members with religious insults about us, using our names and addresses.",
+    "pii_tags": [
+      "name",
+      "addr"
+    ],
+    "incident_type": "HARASSMENT",
+    "expected_laws": [
+      "OSA"
+    ],
+    "expected_top_clauses": [
+      "OSA:20(1)"
+    ],
+    "notes": "Religious harassment targeting family. Tests ICCPR."
+  },
+  {
+    "id": "E056",
+    "incident_text": "A private tuition master collected my child's NIC, photo, and home address, then sent threatening messages to me demanding higher fees.",
+    "pii_tags": [
+      "id",
+      "addr",
+      "name",
+      "phone"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:7(a)"
+    ],
+    "notes": "Unauthorized data collection + threats."
+  },
+  {
+    "id": "E057",
+    "incident_text": "An ex-employee published our company customer database on a hacking forum, including names, emails, phone numbers, and NIC numbers of 5000 customers.",
+    "pii_tags": [
+      "name",
+      "email",
+      "phone",
+      "id"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA",
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "CCA:7(a)",
+      "CCA:7(b)"
+    ],
+    "notes": "Mass database leak. Tests CCA:7(b) dealing in stolen data."
+  },
+  {
+    "id": "E058",
+    "incident_text": "I received an email saying someone bought my NIC scan and DOB on the dark web and offering to sell me protection.",
+    "pii_tags": [
+      "id",
+      "dob",
+      "email"
+    ],
+    "incident_type": "IDENTITY_THEFT",
+    "expected_laws": [
+      "CCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:7(c)",
+      "CCA:7(b)"
+    ],
+    "notes": "Dark web data trade. Tests PC:403 receiving stolen property."
+  },
+  {
+    "id": "E059",
+    "incident_text": "A friend secretly installed a tracking app on my phone that sends my location, call logs, and messages to their phone.",
+    "pii_tags": [
+      "phone",
+      "location",
+      "name"
+    ],
+    "incident_type": "ACCOUNT_TAKEOVER",
+    "expected_laws": [
+      "CCA",
+      "TCA"
+    ],
+    "expected_top_clauses": [
+      "CCA:3(a)",
+      "CCA:5",
+      "TCA:52(a)"
+    ],
+    "notes": "Spyware installation on phone."
+  },
+  {
+    "id": "E060",
+    "incident_text": "A political party website published voter registration details including my name, NIC, address, and voting precinct without authorization.",
+    "pii_tags": [
+      "name",
+      "id",
+      "addr"
+    ],
+    "incident_type": "DATA_EXPOSURE",
+    "expected_laws": [
+      "PDPA",
+      "RTI"
+    ],
+    "expected_top_clauses": [
+      "PDPA:10(a)",
+      "PDPA:7(a)",
+      "RTI:5(1)(a)"
+    ],
+    "notes": "Unauthorized publication of voter data."
+  }
+]

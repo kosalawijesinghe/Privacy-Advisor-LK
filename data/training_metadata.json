@@ -1,0 +1,23 @@
+{
+  "semantic_pairs_count": 1885,
+  "classifier_samples_count": 70,
+  "num_classes": 6,
+  "class_mapping": {
+    "electronic_transactions": 0,
+    "harassment": 1,
+    "personal_data_breach": 2,
+    "right_to_information": 3,
+    "telecommunications": 4,
+    "unauthorized_access": 5
+  },
+  "incident_distribution": {
+    "unknown": 306,
+    "personal_data_breach": 31,
+    "unauthorized_access": 9,
+    "harassment": 6,
+    "right_to_information": 2,
+    "electronic_transactions": 11,
+    "telecommunications": 11
+  },
+  "timestamp": "2026-03-21"
+}

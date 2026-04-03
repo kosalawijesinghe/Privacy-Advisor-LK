@@ -1,0 +1,13 @@
+{
+  "model": "SBERT (all-MiniLM-L6-v2)",
+  "status": "validated_and_ready",
+  "training_pairs": 1885,
+  "unique_clauses": 70,
+  "avg_queries_per_clause": 26.93,
+  "unique_query_percentage": 39.0,
+  "baseline_similarity_mean": 0.8566187024116516,
+  "device": "cpu",
+  "embedding_dimension": 384,
+  "expected_recall": "99.3%+",
+  "expected_precision_at_3": "89-91%"
+}

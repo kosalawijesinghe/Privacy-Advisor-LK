@@ -1,0 +1,1226 @@
+[
+  {
+    "text": "personal data leaked online including name phone email",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "database was breached exposing customer records",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "spreadsheet with personal information published publicly",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "cloud storage misconfigured data accessible publicly",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "data dump found on dark web containing personal details",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "government portal accidentally exposed citizen NIC numbers",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "employee records leaked from company server",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "personal information exposed due to security vulnerability",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "data breach at healthcare provider exposed patient records",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "customer database leaked online with addresses and phone numbers",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "my NIC and address found in an online data dump",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "hospital system breached and patient files made public",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "company accidentally sent spreadsheet with all staff personal details",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "voter registration data found publicly accessible on the internet",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "bank statement and NIC number leaked in a data breach",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "private medical records shared without authorization",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "insurance company exposed policyholder NIC and address online",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "university student records published by mistake on public server",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "passport details and date of birth found on internet",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "my personal data is on a website I never registered with",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "telecom company exposed subscriber data through API vulnerability",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "government database misconfiguration exposed citizen records",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "my full name phone number and email published on a public forum",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "delivery company leaked customer names and addresses",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "data from a breached platform includes my NIC and phone",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "personal records accessible without login on a website",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "sensitive employee data exposed in a misconfigured cloud bucket",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "my profile information was scraped and republished elsewhere",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "company sent personal data of all customers to wrong email list",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "private health record disclosed to unauthorized third party",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "my employment record leaked along with salary information",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "educational credentials and transcript shared publicly",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "financial account numbers and routing information exposed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "social security equivalent numbers leaked in bulk",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "biometric data and fingerprints exposed in database",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "credit score and loan history made publicly visible",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "criminal record and legal history exposed online",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "mental health records disclosed without consent",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "genetic testing results and DNA information shared",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "insurance claims history and medical treatments disclosed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "workplace harassment complaints and internal documents leaked",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "tax returns and financial statements made public",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "real estate records and property details exposed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "vehicle registration and drivers license information leaked",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "voter ID and registration details published",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "diplomatic or sensitive government documents exposed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "witness protection program details accidentally disclosed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "vulnerable population data including children IDs exposed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "religious affiliation and sensitive beliefs data shared",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "communication logs and private messages from accounts disclosed",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "backup files containing personal information left accessible",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "search engine cache revealing previously deleted private pages",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "archive services containing snapshots of exposed personal pages",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "temporary files on public servers containing personal data",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "logs and error messages exposing personal details",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "metadata in documents revealing sensitive information",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "git repositories accidentally containing private credentials",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "docker registries with sensitive data in images",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "open source projects containing personal information",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "testing environments with production personal data",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "public repositories containing API keys and tokens",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "email headers revealing personal IP addresses",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "DNS records exposing internal infrastructure and personal details",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "SSL certificate details exposing email addresses",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "whois records revealing registrant personal information",
+    "label": "DATA_EXPOSURE"
+  },
+  {
+    "text": "someone used my NIC number to open bank account",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "my identity was stolen and used for loan applications",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fraudulent transactions using my identity card details",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "someone applied for credit card using my personal information",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "my NIC was used to register mobile SIM without permission",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "identity stolen for financial fraud using my passport details",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "unauthorized bank account opened with my identity documents",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "someone is using my NIC to obtain government services",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "my identity used to purchase goods fraudulently",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "credit taken out in my name without my knowledge",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "someone registered a company using my NIC and signature",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "my passport was used to apply for a visa I did not request",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fraudulent utility connection registered under my name and NIC",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "unknown person filed a tax return using my identity details",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "my NIC photocopied and used to register a vehicle",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "subscriptions and services signed up in my name without consent",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "someone obtained a driving licence using my stolen personal details",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "financial account opened at a microfinance institution using my ID",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "my identity documents were stolen and used to rent a house",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "someone registered a mobile number using a photocopy of my NIC",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "forged birth certificate using my name and details",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "false marriage license created in my name",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fraudulent divorce filed under my identity",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fake adoption papers using my identity information",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "forged medical license using my credentials",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "false employment verification stating I work somewhere",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fraudulent scholarship awarded in my stolen name",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fake social media accounts created with my verified status",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "spoofed phone number using my caller ID",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "forged insurance policy claims filed as me",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fraudulent power of attorney documents signed as me",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fake medical prescription submitted in my name",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "false police report filed against someone using my identity",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "unauthorized witness testimony given in my name",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "vote cast in my name without authorization",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "jury duty assignment using my personal information",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "passport or travel documents forged in my name",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "cryptocurrency wallet created and funded with stolen identity",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "intellectual property patented in stolen identity",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "business license registered fraudulently in my name",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "child identity stolen for insurance fraud scheme",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "corporate identity used to create fake subsidiary",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "elderly person identity stolen for multiple schemes",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "deceased person identity reactivated for fraud",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "minor identity used to take loans and open accounts",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "immigrant identity details used for illegal employment",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "identity used to bypass sanctions and export controls",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "synthetic identity created combining my details with others",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "identity used in identity swapping scheme with criminal",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "family member identity used to facilitate financial fraud",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "cryptocurrency mining malware deployed using my identity as platform",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "money laundering scheme using accounts opened in my stolen identity",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "terrorism financing using my hijacked financial accounts",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fraud ring using coordinated identity theft of multiple family members",
+    "label": "IDENTITY_THEFT"
+  },
+  {
+    "text": "fake profile created using my name and photos",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "someone pretending to be me on social media",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake account sending messages to my contacts",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonating me online using my personal information",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "someone created fake facebook profile with my photo and name",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake instagram account using my pictures",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "posing as me online to deceive my friends and family",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "someone messaging people pretending to be me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake whatsapp account with my profile picture",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonation on dating app using my photos",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "my WhatsApp display picture used to create a fake account",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "someone made a fake TikTok account using my face and name",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "my profile photo from Facebook used on a fake Telegram account",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake LinkedIn profile with my name and employment history",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "someone is replying to my contacts as me on WhatsApp",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "a fraudster is using my name and DP to ask contacts for money",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "my selfie posted on a fake account pretending to be me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "someone borrowed money from my friends by pretending to be me online",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "duplicate account with my name and profile photo spreading false information",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "stranger created romance profile using my photos on a dating site",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake professional profile as me on job seeking site",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "counterfeit blog or news site using my name and authority",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake email address impersonating me for phishing",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "spoofed SMS appearing to come from my number",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "robocall system using my voice recording impersonating me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake government official impersonation using my credentials",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonation in customer support chats claiming to be me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake business profile using my name as the owner",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonated influencer account using my photos and handle",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake medical professional profile impersonating me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "lawyer or legal professional impersonation using my identity",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "financial advisor impersonation using stolen credentials",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake charity or NGO using my name and reputation",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "religious authority impersonation using my name",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "academic researcher impersonation using my publications",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "deepfake video of me making false statements",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "AI voice synthesis impersonating me in audio recordings",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "synthetic personality created using my social patterns",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonation across multiple coordinated profiles",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonation in dark web forums using my credentials",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "fake account spreading misinformation and blaming me for it",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "coordinated harassment campaign by fake accounts pretending to be me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "impersonation for political purposes using my identity",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "religious extremism content posted by impersonator using my profile",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "hate speech and violent content shared by impersonator as me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "illegal marketplace listings by account impersonating me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "child safety violations committed by impersonator as me",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "commercial fraud and product scams by impersonator",
+    "label": "IMPERSONATION"
+  },
+  {
+    "text": "my home address posted online publicly",
+    "label": "DOXXING"
+  },
+  {
+    "text": "personal details including address shared on forum",
+    "label": "DOXXING"
+  },
+  {
+    "text": "someone published my home location and phone number online",
+    "label": "DOXXING"
+  },
+  {
+    "text": "my private information posted on social media to harass me",
+    "label": "DOXXING"
+  },
+  {
+    "text": "personal information shared publicly to intimidate",
+    "label": "DOXXING"
+  },
+  {
+    "text": "residential address and workplace exposed online",
+    "label": "DOXXING"
+  },
+  {
+    "text": "my home address published on public website with map location",
+    "label": "DOXXING"
+  },
+  {
+    "text": "physical location and work details posted in forum",
+    "label": "DOXXING"
+  },
+  {
+    "text": "GPS coordinates of my home shared on social media",
+    "label": "DOXXING"
+  },
+  {
+    "text": "my address published along with criminal targeting information",
+    "label": "DOXXING"
+  },
+  {
+    "text": "home address and family members names posted online",
+    "label": "DOXXING"
+  },
+  {
+    "text": "workplace address and office location exposed publicly",
+    "label": "DOXXING"
+  },
+  {
+    "text": "school or university address published with my details",
+    "label": "DOXXING"
+  },
+  {
+    "text": "my apartment details and building security information leaked",
+    "label": "DOXXING"
+  },
+  {
+    "text": "neighborhood and specific house photo posted with my name",
+    "label": "DOXXING"
+  },
+  {
+    "text": "rental address history exposed by malicious person",
+    "label": "DOXXING"
+  },
+  {
+    "text": "business location published targeting my commercial operation",
+    "label": "DOXXING"
+  },
+  {
+    "text": "vacation or temporary residence location posted to harm me",
+    "label": "DOXXING"
+  },
+  {
+    "text": "hospital or medical facility location details exposed",
+    "label": "DOXXING"
+  },
+  {
+    "text": "religious place of worship and prayer schedule published",
+    "label": "DOXXING"
+  },
+  {
+    "text": "family members home addresses published to intimidate through family",
+    "label": "DOXXING"
+  },
+  {
+    "text": "children schools location and schedule doxxed for safety risk",
+    "label": "DOXXING"
+  },
+  {
+    "text": "elderly parents address posted on harassment forum",
+    "label": "DOXXING"
+  },
+  {
+    "text": "extended family members addresses mass published",
+    "label": "DOXXING"
+  },
+  {
+    "text": "employer and colleagues addresses collaterally doxxed",
+    "label": "DOXXING"
+  },
+  {
+    "text": "friend group collectively doxxed due to association",
+    "label": "DOXXING"
+  },
+  {
+    "text": "domestic violence victim address exposed bypassing shelter",
+    "label": "DOXXING"
+  },
+  {
+    "text": "witness protection location compromise attempt",
+    "label": "DOXXING"
+  },
+  {
+    "text": "political activist address published for targeting",
+    "label": "DOXXING"
+  },
+  {
+    "text": "journalist location exposed to prevent reporting",
+    "label": "DOXXING"
+  },
+  {
+    "text": "human rights advocate address published for harassment",
+    "label": "DOXXING"
+  },
+  {
+    "text": "whistleblower location exposed for retaliation",
+    "label": "DOXXING"
+  },
+  {
+    "text": "vulnerable minority group members systematically doxxed",
+    "label": "DOXXING"
+  },
+  {
+    "text": "LGBTQ person doxxed in hostile jurisdiction",
+    "label": "DOXXING"
+  },
+  {
+    "text": "asylum seeker address exposed putting them at risk",
+    "label": "DOXXING"
+  },
+  {
+    "text": "metadata in posted photo revealing home location",
+    "label": "DOXXING"
+  },
+  {
+    "text": "calendar invitation with venue address shared publicly",
+    "label": "DOXXING"
+  },
+  {
+    "text": "real estate listing exposed revealing current home",
+    "label": "DOXXING"
+  },
+  {
+    "text": "utility bill copy posted revealing address details",
+    "label": "DOXXING"
+  },
+  {
+    "text": "shipping address visible in unboxing video published",
+    "label": "DOXXING"
+  },
+  {
+    "text": "office WiFi SSID pattern revealing location",
+    "label": "DOXXING"
+  },
+  {
+    "text": "network name history revealing past locations",
+    "label": "DOXXING"
+  },
+  {
+    "text": "smart home device location information exposed",
+    "label": "DOXXING"
+  },
+  {
+    "text": "fitness tracking data pattern revealing home location",
+    "label": "DOXXING"
+  },
+  {
+    "text": "voice assistant logs revealing regular location routine",
+    "label": "DOXXING"
+  },
+  {
+    "text": "someone is harassing me with threatening messages online",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "receiving repeated threatening comments on social media",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "cyberbullying and hate speech directed at me",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "someone creating fake rumours about me to damage reputation",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "coordinated harassment campaign by multiple accounts",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "persistent stalking and unwanted contact online",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "receiving death threats and violent messages",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "sexual harassment and unwanted explicit messages",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "blackmail attempted using compromising personal information",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "doxing information used to facilitate offline harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "impersonation used to humiliate and defame me publicly",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "revenge porn shared threatening personal safety",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "non consensual intimate images used for extortion",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "negative reviews and false accusations posted systematically",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "deliberate spreading of false rumors about my character",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "online harassment escalating to threats of physical violence",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "cyberstalking with tracking of my online activities",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "coordinated social media pile on to damage reputation",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "professional reputation attacked with false accusations",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "family members targeted in harassment to harm me indirectly",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "religious or political harassment based on identity",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "gendered harassment and misogynistic abuse",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "racist slurs and ethnic harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "homophobic harassment and LGBTQ targeted abuse",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "disability related mockery and harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "body shaming and appearance based harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "age related harassment and discrimination",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "career sabotage through coordinated harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "educational exclusion through targeted harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "deepfake video used to humiliate and harass",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "AI generated content mocking my appearance",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "coordinated bot networks targeting me with abuse",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "harassment campaign organized through dark web forum",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "swatting attempt triggered by online harassment",
+    "label": "HARASSMENT"
+  },
+  {
+    "text": "my email account was hacked and taken over",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "someone gained unauthorized access to my social media account",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "my computing device was compromised and accounts accessed",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "password was stolen and used to access my accounts",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "unauthorized person took control of my social media profile",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "my bank account was accessed without authorization",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "malware installed on device giving attacker access",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "phishing link used to trick me into revealing credentials",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "recovery email or phone compromised losing account access",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "two factor authentication bypassed to access my account",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "SIM swap attack giving attacker control of my accounts",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "recovery codes stolen allowing account reset without me",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "session tokens stolen from browser compromising accounts",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "API keys exposed allowing unauthorized account access",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "keylogger installed capturing login credentials",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "multiple accounts compromised in coordinated attack",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "cryptocurrency wallet accessed and funds stolen",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "email account taken over locking me out of all connected services",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "cloud storage account compromised exposing backed up data",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "work account hacked allowing attacker to access company data",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "gaming account stolen with valuable items or currency",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "streaming service account hijacked by attacker",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "payment method added to account without authorization",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "subscription services activated through compromised account",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "seller account on marketplace hijacked for fraudulent sales",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "business account compromised with financial damages",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "credential stuffing attack used my password on multiple sites",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "brute force attack guessed weak password to access",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "social engineering used to trick support into resetting password",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "security questions answered from OSINT compromising account",
+    "label": "ACCOUNT_TAKEOVER"
+  },
+  {
+    "text": "my photo taken without consent and shared online",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "intimate pictures shared without my permission",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "nude images distributed on the internet without consent",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "revenge porn posted after relationship ended",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "my image used in fake or manipulated sexual content",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "private photographs published to humiliate me",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "video of me created without consent for harassment",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "embarrassing photo from my past resurfaced and shared",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "screen shots of private messages shared publicly with images",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "gym or fitness photos misused in advertising",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "medical imaging results leaked and shared",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "family photos taken from my account and misused",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "deepfake pornography created using my face",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "AI generated explicit images with my likeness",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "face swap technology used to create fake compromising images",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "my face photoshopped into explicit content",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "non consensual deepfake video shared for sex trafficking",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "synthetic nude images generated from my clothed photos",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "my photo used on dating profile I did not create",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "catfishing profile created using stolen photos of me",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "webcam footage captured without consent and shared",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "mirror or reflective surface image misused for harassment",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "partial body images combined to create false composite",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "security camera footage leaked and shared online",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "drone or aerial photography of my property published",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "satellite imagery used to dox and harass me",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "non consensual intimate image used for extortion",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "sexual image distributed to my family and colleagues",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "explicit images used in sextortion scheme",
+    "label": "IMAGE_ABUSE"
+  },
+  {
+    "text": "intimate photos shared with intent to humiliate",
+    "label": "IMAGE_ABUSE"
+  }
+]

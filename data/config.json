@@ -1,0 +1,147 @@
+{
+  "tag_weights": {
+    "id": 25,
+    "phone": 20,
+    "addr": 15,
+    "dob": 15,
+    "email": 10,
+    "name": 10,
+    "location": 10,
+    "username": 5
+  },
+  "risk_modifiers": {
+    "impersonate": 20,
+    "img_exposed": 15
+  },
+  "combo_rules": [
+    {
+      "requires_all": ["id", "name"],
+      "bonus": 10,
+      "label": "Identity Theft Combo (ID + Name)"
+    }
+  ],
+  "volume_bonus": {
+    "min_tags": 5,
+    "bonus": 10,
+    "label": "High volume of data types (5+)"
+  },
+  "risk_levels": [
+    { "min_score": 70, "level": "Critical", "color": "#ef4444" },
+    { "min_score": 50, "level": "High", "color": "#f97316" },
+    { "min_score": 30, "level": "Medium", "color": "#FFD700" },
+    { "min_score": 0,  "level": "Low", "color": "#22c55e" }
+  ],
+  "tag_labels": {
+    "name": "Full Name",
+    "id": "ID / NIC",
+    "phone": "Phone",
+    "email": "Email",
+    "addr": "Address",
+    "dob": "Birth Date",
+    "username": "Username",
+    "location": "Location",
+    "impersonate": "Impersonation",
+    "img_exposed": "Exposed Image"
+  },
+  "tag_phrases": {
+    "id": "national identity card number",
+    "name": "full name",
+    "phone": "phone number",
+    "email": "email address",
+    "addr": "physical address home address",
+    "dob": "date of birth",
+    "username": "social media username online account",
+    "location": "location GPS coordinates",
+    "impersonate": "impersonation identity fraud",
+    "img_exposed": "image photo exposed online"
+  },
+  "scenario_definitions": [
+    {
+      "key": "IDENTITY_IMPERSONATION",
+      "title": "Identity Impersonation",
+      "summary": "Active impersonation or identity fraud detected.",
+      "description": "Someone is actively impersonating the victim or using their identity fraudulently. This triggers specific criminal provisions under the Online Safety Act.",
+      "clause_context": "Online impersonation is directly criminalised under OSA Section 18. Identity fraud using personal data also triggers data protection and computer crime provisions.",
+      "law_priority": ["OSA", "CCA", "PDPA", "ETA"]
+    },
+    {
+      "key": "IMAGE_ABUSE",
+      "title": "Image / Photo Abuse",
+      "summary": "Personal images shared or misused without consent.",
+      "description": "Personal photographs or images have been shared publicly without the victim's consent, potentially on an online platform. This constitutes a violation of privacy and may involve harassment.",
+      "clause_context": "The unauthorized sharing or misuse of personal images is addressed by online safety provisions and data protection obligations regarding sensitive personal data.",
+      "law_priority": ["OSA", "PDPA", "CCA"]
+    },
+    {
+      "key": "ACCOUNT_MISUSE",
+      "title": "Account Misuse / Takeover",
+      "summary": "Account credentials or access channels compromised.",
+      "description": "Account handles and contact information are exposed together, creating risk of unauthorized account access, credential stuffing, or account hijacking.",
+      "clause_context": "This clause protects against unauthorized access to electronic systems, accounts, and data processing infrastructure.",
+      "law_priority": ["ETA", "CCA", "PDPA"]
+    },
+    {
+      "key": "DATABASE_BREACH",
+      "title": "Database / Mass Data Breach",
+      "summary": "Large-scale data exposure with multiple PII categories.",
+      "description": "Multiple categories of personal data have been exposed simultaneously, indicating a potential database breach or large-scale data leak affecting data integrity and confidentiality.",
+      "clause_context": "Data controllers have a legal obligation to protect personal data from breaches. Mass exposure of multiple PII categories constitutes a serious violation.",
+      "law_priority": ["PDPA", "CCA", "ETA"]
+    },
+    {
+      "key": "UNAUTHORIZED_DATA_PROCESSING",
+      "title": "Unauthorized Data Processing",
+      "summary": "Personal data processed or disclosed without lawful basis.",
+      "description": "Personal data is being processed, stored, disclosed, or shared without a lawful basis or the data subject's consent. This includes doxxing, surveillance, and unlawful profiling.",
+      "clause_context": "Processing personal data without a lawful basis violates the data subject's fundamental rights under data protection legislation.",
+      "law_priority": ["PDPA", "RTI", "TCA"]
+    },
+    {
+      "key": "DATA_EXPOSURE",
+      "title": "General Data Exposure",
+      "summary": "Personal data has been exposed without authorization.",
+      "description": "Personal data has been made accessible publicly or to unauthorized parties. The context suggests general exposure rather than a targeted attack.",
+      "clause_context": "Even general data exposure falls under data protection and computer crime provisions when personal data is shared without lawful basis.",
+      "law_priority": ["PDPA", "CCA"]
+    },
+    {
+      "key": "DOXXING",
+      "title": "Doxxing",
+      "summary": "Personal information deliberately published to harass or endanger.",
+      "description": "Private personal information has been deliberately published online to intimidate, harass, or endanger the victim. This may include addresses, phone numbers, workplace details, or family information.",
+      "clause_context": "Doxxing is addressed through online safety provisions criminalising harassment, data protection obligations, and computer crime provisions regarding unauthorized disclosure.",
+      "law_priority": ["OSA", "PDPA", "CCA"]
+    },
+    {
+      "key": "HARASSMENT",
+      "title": "Online Harassment",
+      "summary": "Sustained online harassment using personal data.",
+      "description": "The victim is experiencing persistent online harassment, cyberbullying, or threatening behaviour that leverages their personal data. This may include repeated unwanted contact, threats, or intimidation.",
+      "clause_context": "Online harassment is criminalised under the Online Safety Act and may also engage telecommunications and data protection provisions.",
+      "law_priority": ["OSA", "TCA", "PDPA", "CCA"]
+    },
+    {
+      "key": "IDENTITY_THEFT",
+      "title": "Identity Theft",
+      "summary": "Personal data stolen or misused for fraudulent purposes.",
+      "description": "Sufficient personal data has been compromised to enable identity theft, including potential financial fraud, fraudulent account creation, or other unauthorized use of the victim's identity.",
+      "clause_context": "Identity theft engages both criminal provisions under the Computer Crime Act and data protection obligations under the PDPA.",
+      "law_priority": ["CCA", "PDPA", "ETA", "OSA"]
+    },
+    {
+      "key": "ACCOUNT_TAKEOVER",
+      "title": "Account Takeover",
+      "summary": "Unauthorized access to accounts or digital systems.",
+      "description": "An attacker has gained unauthorized access to the victim's online accounts, email, social media, or digital systems. This may involve credential theft, SIM swapping, or exploitation of security vulnerabilities.",
+      "clause_context": "Account takeover is a criminal offence under the Computer Crime Act and Electronic Transactions Act, with additional protections under telecommunications legislation.",
+      "law_priority": ["CCA", "ETA", "TCA", "PDPA"]
+    }
+  ],
+  "explainability": {
+    "impact_thresholds": [
+      { "min_weight": 20, "label": "Critical" },
+      { "min_weight": 15, "label": "Major" },
+      { "min_weight": 0,  "label": "Moderate" }
+    ]
+  }
+}

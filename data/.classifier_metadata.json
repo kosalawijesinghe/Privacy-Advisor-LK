@@ -1,0 +1,6 @@
+{
+  "n_samples": 306,
+  "n_classes": 7,
+  "cv_accuracy": 0.7093,
+  "cached_at": "2026-03-13T18:17:17.133695"
+}

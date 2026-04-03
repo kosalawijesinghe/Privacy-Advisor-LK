@@ -1,0 +1,8 @@
+{
+  "electronic_transactions": 0,
+  "harassment": 1,
+  "personal_data_breach": 2,
+  "right_to_information": 3,
+  "telecommunications": 4,
+  "unauthorized_access": 5
+}
