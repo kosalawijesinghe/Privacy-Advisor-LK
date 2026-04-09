@@ -18,7 +18,7 @@ from modules.relevance_matrix import get_clauses_for_tag, get_tags_for_clause
 
 
 def _load_config() -> dict:
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "data", "config.json"))
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "config", "config.json"))
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 

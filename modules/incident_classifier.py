@@ -29,8 +29,29 @@ try:
     from sklearn.pipeline import Pipeline as SKPipeline
     import numpy as np
     _HAS_SKLEARN = True
+    
+    try:
+        from nltk.stem import WordNetLemmatizer
+        from nltk.tokenize import word_tokenize
+        import nltk
+        try:
+            nltk.data.find('tokenizers/punkt')
+        except LookupError:
+            nltk.download('punkt', quiet=True)
+        try:
+            nltk.data.find('corpora/wordnet')
+        except LookupError:
+            nltk.download('wordnet', quiet=True)
+        _HAS_NLTK = True
+        _LEMMATIZER = WordNetLemmatizer()
+    except ImportError:
+        _HAS_NLTK = False
+        _LEMMATIZER = None
+        
 except ImportError:
     _HAS_SKLEARN = False
+    _HAS_NLTK = False
+    _LEMMATIZER = None
 
 
 _TRAINING_DATA_PATH = os.path.join(
@@ -73,6 +94,32 @@ _KEYWORD_RULES: Dict[str, List[str]] = {
 }
 
 
+def _lemmatize_tokenizer(text: str) -> List[str]:
+    """
+    Custom tokenizer with lemmatization for better text normalization.
+    Reduces 'phishing', 'phished', 'phish' to single token.
+    Filters out domain-specific stop words that are too common across all classes.
+    """
+    if not _HAS_NLTK or _LEMMATIZER is None:
+        return text.lower().split()
+    
+    try:
+        tokens = word_tokenize(text.lower())
+        # Filter short tokens and domain stop words
+        domain_stops = {
+            "incident", "violation", "breach", "exposed", "risk", "threat",
+            "security", "confidential", "attack", "access"
+        }
+        lemmatized = [
+            _LEMMATIZER.lemmatize(token)
+            for token in tokens
+            if len(token) > 2 and token.isalpha() and token not in domain_stops
+        ]
+        return lemmatized
+    except Exception:
+        return text.lower().split()
+
+
 class IncidentClassifier:
     """
     Classifies incidents using TF-IDF + Logistic Regression trained on
@@ -81,6 +128,13 @@ class IncidentClassifier:
 
     OPTIMIZATION: Trained model is cached to disk with training data hash.
     Avoids re-running 5-fold CV on every startup.
+
+    IMPROVEMENTS:
+    - Custom lemmatization-based tokenizer to reduce inflections
+    - Domain-specific stop word filtering  
+    - Enhanced TF-IDF params (min_df, max_df) to reduce noise
+    - Confidence boosting when keyword/tag patterns match
+    - PII tag integration into text features
 
     Attributes
     ----------
@@ -168,6 +222,11 @@ class IncidentClassifier:
         OPTIMIZATION: First attempts to load cached model. If cache is valid,
         skips CV and returns immediately (~7s faster). Only runs CV if training
         data has changed or cache is missing.
+        
+        IMPROVEMENTS:
+        - Custom lemmatization tokenizer for better text normalization
+        - Enhanced TF-IDF parameters (min_df=2, max_df=0.8) to reduce noise
+        - Reduced feature space from 5000 to 1500 to prevent overfitting
         """
         # Try to load cached model first
         if self._load_cached_model():
@@ -184,11 +243,22 @@ class IncidentClassifier:
         self.n_samples = len(texts)
         self.n_classes = len(set(labels))
 
+        # Enhanced TF-IDF with custom tokenizer and better filtering
+        if _HAS_NLTK:
+            tokenizer = _lemmatize_tokenizer
+        else:
+            tokenizer = None
+
         self._model = SKPipeline([
             ("tfidf", TfidfVectorizer(
-                max_features=5000,
+                max_features=1500,  # Reduced from 5000 to prevent overfitting on 306 samples
                 ngram_range=(1, 2),
                 stop_words="english",
+                min_df=2,  # Filter terms that appear in <2 documents
+                max_df=0.8,  # Filter terms that appear in >80% of documents
+                tokenizer=tokenizer if _HAS_NLTK else None,
+                lowercase=True,
+                sublinear_tf=True,  # Use sublinear term frequency scaling
             )),
             ("clf", LogisticRegression(
                 max_iter=1000,
@@ -240,19 +310,64 @@ class IncidentClassifier:
             input_text = f"{input_text} {' '.join(tags)}"
 
         if self._is_trained and self._model is not None:
-            return self._ml_classify(input_text)
+            return self._ml_classify(input_text, tags)
 
         return self._rule_classify(input_text, tags)
 
-    def _ml_classify(self, text: str) -> Dict:
-        """Use the trained ML model for classification."""
+    def _ml_classify(self, text: str, tags: Optional[List[str]] = None) -> Dict:
+        """Use the trained ML model for classification with confidence boosting.
+        
+        IMPROVEMENT: 
+        - Confidence calibration using domain keywords
+        - PII tag integration to boost incident-specific predictions
+        - Keyword matching validation
+        """
         probas  = self._model.predict_proba([text])[0]
         classes = self._model.classes_
         scores  = {cls: float(prob) for cls, prob in zip(classes, probas)}
         best_idx = int(np.argmax(probas))
+        base_confidence = float(probas[best_idx])
+        best_type = classes[best_idx]
+        text_lower = text.lower()
+        
+        # Confidence calibration: boost if domain keywords match
+        if best_type in _KEYWORD_RULES:
+            keyword_matches = sum(
+                1 for kw in _KEYWORD_RULES[best_type] 
+                if kw.lower() in text_lower
+            )
+            if keyword_matches > 0:
+                boost = min(0.15, keyword_matches * 0.05)
+                base_confidence = min(1.0, base_confidence + boost)
+        
+        # PII tag integration: boost confidence when tags align with incident type
+        if tags:
+            tag_lower = [t.lower() for t in tags]
+            
+            # Map PII tags to incident type affinities
+            tag_incident_map = {
+                "image": ["IMAGE_ABUSE", "IMPERSONATION"],
+                "name": ["IMPERSONATION", "DOXXING", "IDENTITY_THEFT"],
+                "id": ["IDENTITY_THEFT", "ACCOUNT_TAKEOVER"],
+                "phone": ["HARASSMENT", "IDENTITY_THEFT", "DOXXING"],
+                "email": ["ACCOUNT_TAKEOVER", "DATA_EXPOSURE"],
+                "address": ["DOXXING", "HARASSMENT", "DATA_EXPOSURE"],
+                "dob": ["IDENTITY_THEFT", "DOXXING"],
+                "username": ["ACCOUNT_TAKEOVER", "IDENTITY_THEFT"],
+            }
+            
+            # Check tag alignment with predicted incident
+            tag_boost = 0
+            for tag in tag_lower:
+                if tag in tag_incident_map and best_type in tag_incident_map[tag]:
+                    tag_boost += 0.08  # Boost per matching tag
+            
+            if tag_boost > 0:
+                base_confidence = min(1.0, base_confidence + tag_boost)
+        
         return {
-            "incident_type":       classes[best_idx],
-            "incident_confidence": round(float(probas[best_idx]), 4),
+            "incident_type":       best_type,
+            "incident_confidence": round(base_confidence, 4),
             "all_scores":          {k: round(v, 4) for k, v in scores.items()},
             "cv_accuracy":         self.cv_accuracy,
         }

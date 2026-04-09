@@ -17,7 +17,7 @@ from typing import Dict, List
 
 
 def _load_config() -> dict:
-    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "data", "config.json"))
+    path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "config", "config.json"))
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -34,210 +34,6 @@ _TAG_LABELS = {
     "location": "Location Data",
     "impersonate": "Impersonation",
     "img_exposed": "Image Exposure",
-}
-
-# ── Scenario × Clause Specific Legal Reasoning ──────────────────────────────
-# Format: _CLAUSE_REASONING[scenario_key][law_code:section] = "why this clause applies"
-# Every PRIMARY clause for every scenario has a tailored rationale.
-_CLAUSE_REASONING: Dict[str, Dict[str, str]] = {
-
-    "IDENTITY_IMPERSONATION": {
-        "OSA:18(a)": "Section 18(a) of the Online Safety Act directly criminalises using a computer to cheat by impersonating another person online. Creating a fake profile or account using your identity is a textbook violation of this section — it is one of the most directly applicable laws in your situation.",
-        "OSA:18(b)": "Section 18(b) covers dishonest use of electronic means for personation. Anyone who deceives others by messaging, posting, or transacting as you through social media or messaging apps falls squarely under this provision.",
-        "OSA:18(c)": "Section 18(c) targets impersonation that causes wrongful gain to the perpetrator or wrongful loss to you — for example, defrauding your contacts financially or damaging your reputation by acting as you.",
-        "OSA:20(1)": "Section 20(1) criminalises transmitting communications that cause harassment, alarm, or distress. Messages, posts, or calls made under your identity to harm your reputation or harass others directly trigger this section.",
-        "CCA:4(a)": "Section 4(a) penalises any act done to secure unauthorized access to a computer — if your accounts or devices were accessed or compromised to facilitate the impersonation, this section applies to that intrusion.",
-        "CCA:4(b)": "Section 4(b) specifically covers unauthorized access with intent to commit a further offence. Accessing your data to enable impersonation satisfies both the access and the intent conditions of this provision.",
-        "CCA:10": "Section 10 covers unauthorized disclosure of information that enables access to a computer or account. Sharing or leaking your credentials or identity data to enable someone to impersonate you falls directly under this section.",
-        "TCA:46B": "Section 46B criminalises using telecommunications to deceive or mislead anyone — phone calls, SMS, or messaging apps used to impersonate you are specifically covered by this provision.",
-        "TCA:46C": "Section 46C penalises providing false identity information to obtain a telecom service. If your identity was used to register a phone number or SIM card in your name, this section directly applies.",
-        "PDPA:13(1)": "As a victim of impersonation, you have a right under Section 13(1) to demand access to all personal data held by any controller whose data was used to enable the impersonation.",
-        "PDPA:10(a)": "The organisation or platform that failed to protect your personal data — allowing it to be used for impersonation — breached its confidentiality obligation under Section 10(a).",
-        "CCA:7(a)": "Causing a computer to perform a function without authorization to copy or access your identity data for impersonation purposes is prohibited by Section 7(a).",
-        "ETA:12(1)(a)": "Electronic records (messages, transactions) falsely attributed to you through impersonation are addressed by Section 12(1)(a), which governs the proper attribution of electronic records.",
-        "ETA:12(2)(a)": "Section 12(2)(a) provides grounds to challenge electronic communications that were falsely attributed to you by an impersonator.",
-        "TCA:52(d)": "Section 52(d) covers intrusion into telecommunications systems with intent to cause harm — accessing telecom tools to facilitate impersonation engages this provision.",
-    },
-
-    "IMAGE_ABUSE": {
-        "OSA:20(1)": "Section 20(1) of the Online Safety Act is the primary provision for image-based abuse — it directly criminalises posting or sharing content (including images) that causes harassment, alarm, distress, or damage to reputation. This is the most applicable law to your situation.",
-        "OSA:18(a)": "If your image was used to create a fake profile or avatar to impersonate you, Section 18(a) criminalises that act of digital personation using your likeness.",
-        "OSA:18(c)": "Section 18(c) applies where your image was used to gain a wrongful advantage — such as defrauding others or damaging your standing — by impersonating you with your own photo.",
-        "PDPA:10(a)": "Any platform or individual that held your personal images was obligated to maintain their confidentiality under Section 10(a). The exposure of your images is direct evidence of a failure to meet this legal duty.",
-        "PDPA:10(b)": "Section 10(b) obliges all data controllers to prevent loss, destruction, or unauthorized disclosure of personal data including images. Sharing or leaking your photo constitutes a violation of this obligation.",
-        "PDPA:7(a)": "Your images may only be used for the explicit purpose for which they were originally shared. Section 7(a) prohibits processing beyond that defined purpose — redistributing your images for any other reason is a direct breach.",
-        "PDPA:7(c)": "Processing of your images must be confined strictly to the defined purpose. Any use of your images outside what you consented to violates Section 7(c).",
-        "CCA:7(a)": "Causing a computer to perform a function without authorisation to access, copy, or distribute your personal images constitutes an offence under Section 7(a) of the Computer Crime Act.",
-        "CCA:7(c)": "Acquiring or possessing your personal images obtained through unauthorized computer access is specifically prohibited by Section 7(c).",
-        "PDPA:14(1)": "You have the right under Section 14(1) to withdraw consent for continued processing of your images and object to their further use on any platform.",
-        "PDPA:16(a)": "Section 16(a) gives you the explicit right to demand erasure of your images from any data controller or platform that holds them.",
-        "PDPA:11(a)": "Any person or platform that shared or distributed your images must have informed you of the purpose at the time of collection. Failure to disclose this violates Section 11(a).",
-        "RTI:5(1)(a)": "Privacy protection provisions under Section 5(1)(a) restrict the disclosure of your personal information — including images — without lawful justification.",
-        "TCA:49(c)": "Section 49(c) prohibits unauthorized disclosure of communications or content including images transmitted over telecommunications networks.",
-    },
-
-    "ACCOUNT_MISUSE": {
-        "CCA:3(a)": "Section 3(a) of the Computer Crime Act is the foundational offence for computer misuse — it directly criminalises unauthorized access to any computer system. Accessing your account without permission is a violation of this section.",
-        "CCA:3(b)": "Section 3(b) extends the offence to securing unauthorized access to information held in a computer — accessing your account data, messages, or files without your consent is covered here.",
-        "CCA:4(a)": "Section 4(a) penalises unauthorized access committed with intent to carry out a further offence such as fraud, identity theft, or harassment. If your account was accessed for any such purpose, this heavier charge applies.",
-        "CCA:4(b)": "Section 4(b) specifically targets accessing a computer with intent to commit or facilitate a further offence — the combined act of access plus intent is penalised more severely under this provision.",
-        "CCA:5": "Section 5 covers causing a computer to perform unauthorized functions — using your compromised account to send messages, make transfers, or perform any action without your authorization falls under this.",
-        "CCA:10": "Section 10 directly addresses the unauthorized disclosure of information (such as your password or credentials) that enables someone else to access your account.",
-        "ETA:12(1)(a)": "Electronic records attributed to you — messages, transactions, consents — cannot be used without proper authorization. Unauthorized account use violates the attribution rules in Section 12(1)(a).",
-        "ETA:12(1)(b)": "Section 12(1)(b) governs how electronic records are attributed when a party acts with authority — unauthorized account use directly contradicts this by exceeding any authorized scope.",
-        "ETA:12(1)(c)": "Section 12(1)(c) covers negligent attribution — if your authentication information (passwords, OTPs) were exposed negligently, this section applies to the resulting unauthorized actions.",
-        "ETA:7(a)": "Your electronic signature and digital identity cannot be used without authorization. Misuse of your account to sign or authenticate transactions violates Section 7(a).",
-        "ETA:7(b)(ii)": "Section 7(b)(ii) addresses the legal recognition of electronic signatures and authentication — unauthorized use of your account to authenticate actions is invalid under this provision.",
-        "PDPA:10(a)": "If the platform holding your account credentials failed to maintain their confidentiality, leading to the account misuse, Section 10(a) establishes their legal liability.",
-        "PDPA:10(b)": "Section 10(b) obliges platforms to prevent loss or unauthorized access to your account data — a successful account takeover evidences a breach of this duty.",
-        "TCA:46B": "Section 46B covers deception using telecommunications — if your compromised account was used to send deceptive messages via phone or messaging apps, this applies.",
-        "TCA:52(a)": "Section 52(a) prohibits unauthorized intrusion into a telecommunication system — accessing messaging or telecom functions through your compromised account triggers this section.",
-        "TCA:52(d)": "Section 52(d) covers telecoms intrusion with intent to cause harm — misusing your account to harass or harm your contacts through telecom channels engages this provision.",
-        "ETA:12(2)(a)": "Section 12(2)(a) addresses reliance on attributed electronic records — any party who acted on records falsely attributed to your account has a legal remedy under this section.",
-        "ETA:12(2)(b)": "Section 12(2)(b) deals with reliance on electronic records authenticated without proper authority — transactions completed through unauthorized account access can be challenged under this provision.",
-    },
-
-    "DATABASE_BREACH": {
-        "PDPA:6(1)a)": "Section 6(1)(a) requires your data to be collected only for a specified purpose. A breach evidences that inadequate controls were in place over data collected under this obligation.",
-        "PDPA:6(1)b)": "Section 6(1)(b) requires an explicit stated purpose for all personal data. If the breached data was held beyond its stated purposes, this constitutes a double violation — breach and purpose overreach.",
-        "PDPA:6(1)c)": "Section 6(1)(c) requires a legitimate legal basis for holding your data. A breach forces the controller to demonstrate that holding your data met this test — and often it reveals it did not.",
-        "PDPA:7(a)": "Section 7(a) requires that personal data be limited to what is necessary for the defined purpose. Holding your data in a breachable state suggests excess retention beyond what was necessary.",
-        "PDPA:7(b)": "Section 7(b) requires proportionality — the amount and sensitivity of data held must be proportionate to the stated need. A large-scale breach often reveals disproportionate data accumulation.",
-        "PDPA:7(c)": "Section 7(c) requires that processing be confined to the defined purpose. Exposure of your data to unauthorized parties through a breach goes beyond any authorized processing scope.",
-        "PDPA:10(a)": "Section 10(a) is the core security obligation — data controllers must maintain integrity and confidentiality of personal data. A breach is direct and irrefutable evidence of failure to comply with this obligation.",
-        "PDPA:10(b)": "Section 10(b) requires active measures to prevent loss, destruction, or unauthorized disclosure. The occurrence of the breach is itself evidence that adequate measures were not in place.",
-        "PDPA:12(1)(a)": "Section 12(1)(a) holds data controllers accountable for all processing operations. The breach establishes their accountability — they must demonstrate their compliance programmes failed and explain why.",
-        "PDPA:12(1)(f)": "Section 12(1)(f) requires controllers to have processes for detecting and responding to breaches. You can demand proof that such processes existed and were followed.",
-        "PDPA:13(1)": "Section 13(1) gives you the right to know exactly which of your personal data was exposed in the breach and to receive a full account from the controller.",
-        "CCA:7(a)": "Section 7(a) covers causing a computer to perform a function without authorization to access or copy your data from the breached system — the attacker's actions are a criminal offence.",
-        "CCA:7(b)": "Section 7(b) covers offering to deal in unlawfully obtained computer data — if your breached data was sold or traded, this section applies to those transactions.",
-        "CCA:7(c)": "Section 7(c) directly covers acquiring or possessing data obtained through unauthorized computer access — any person who received your data from the breach is liable under this.",
-        "CCA:3(a)": "Section 3(a) criminalises the initial unauthorized access to the database system. The attacker who accessed the server or database commits this primary offence.",
-        "CCA:3(b)": "Section 3(b) extends the offence to unauthorized access to information held in a computer — accessing your personal records within the breached database triggers this provision.",
-        "PDPA:11(a)": "Section 11(a) requires the controller to inform you of how your data is used. Following a breach, you have an enhanced right to this information to understand the full scope of exposure.",
-        "PDPA:9": "Section 9 requires data to be deleted once it is no longer needed. Breached data that was held beyond its retention period compounds the violation.",
-        "PDPA:16(a)": "Section 16(a) gives you the right to demand erasure of your data from all systems — including any copies created during or after the breach.",
-        "PDPA:12(1)(b)": "Section 12(1)(b) requires the controller to maintain appropriate governance. A breach reveals governance failures that you can cite in a complaint.",
-        "PDPA:12(1)(c)": "Section 12(1)(c) requires internal oversight mechanisms — a breach demonstrates these failed and provides the basis for holding the controller liable.",
-        "RTI:5(1)(a)": "Privacy protection provisions under Section 5(1)(a) restrict the disclosure of personal information. The breach constitutes unauthorized disclosure that this section was designed to prevent.",
-    },
-
-    "UNAUTHORIZED_DATA_PROCESSING": {
-        "PDPA:6(1)a)": "Section 6(1)(a) requires that your data be collected and processed only for a specified purpose. If your data is being used for purposes you never agreed to, this is a foundational violation.",
-        "PDPA:6(1)b)": "Section 6(1)(b) requires the purpose to be explicitly stated to you. Processing your data for unstated purposes — including profiling, marketing, or sharing — directly violates this provision.",
-        "PDPA:6(1)c)": "Section 6(1)(c) requires a legitimate legal basis for all processing. If there is no valid legal basis for processing your data as described, the entire processing activity is unlawful under this section.",
-        "PDPA:7(a)": "Section 7(a) requires that processing be confined strictly to the defined purpose. Any processing activity beyond what you were informed of at collection is a direct violation.",
-        "PDPA:7(b)": "Section 7(b) requires proportionality — only the minimum data necessary should be processed. Excessive processing or use of data beyond what is needed violates this obligation.",
-        "PDPA:7(c)": "Section 7(c) is the key proportionality provision — processing must be limited to what is strictly necessary. Unauthorized use of your data exceeds this limit.",
-        "PDPA:9": "Section 9 requires that your data be deleted once the processing purpose is fulfilled. Retaining your data beyond this point for continuing unauthorized processing violates this section.",
-        "PDPA:11(a)": "Section 11(a) obligates the controller to inform you of all processing activities. You were not informed of the processing you are reporting — this omission is itself a violation of this section.",
-        "PDPA:11(b)": "Section 11(b) requires proactive communication about processing decisions. The lack of notification about the processing activity violates your right to be informed.",
-        "PDPA:14(1)": "Section 14(1) gives you the explicit right to withdraw consent and object to the processing of your data at any time. The controller must cease processing upon receipt of your objection.",
-        "PDPA:14(2)": "Section 14(2) provides specific rights to object to automated processing including profiling. If your data is being processed algorithmically without your knowledge, this section directly applies.",
-        "PDPA:16(a)": "Section 16(a) gives you the right to demand immediate erasure of your data where there is no longer a lawful basis for its processing.",
-        "PDPA:16(b)": "Section 16(b) extends erasure rights to situations where you withdraw consent. If processing was consent-based, your withdrawal of consent triggers an immediate erasure obligation.",
-        "RTI:5(1)(a)": "Section 5(1)(a) of the Right to Information Act restricts disclosure or use of personal information held by institutions. Unauthorized processing by government-related bodies may invoke this additional protection.",
-        "PDPA:12(1)(a)": "Section 12(1)(a) requires the controller to be fully accountable for all processing. Your ability to report unauthorized processing creates a direct accountability obligation on the controller.",
-        "PDPA:12(1)(f)": "Section 12(1)(f) requires processes for identifying and rectifying compliance failures. The unauthorized processing you experienced demonstrates a failure in these processes.",
-        "PDPA:10(a)": "Section 10(a) requires confidentiality in all processing. Using your data outside declared purposes breaches the confidentiality obligation attached to that data.",
-        "PDPA:10(b)": "Section 10(b) requires measures to prevent unauthorized disclosure — unauthorized processing may involve disclosure of your data to parties not authorized to receive it.",
-        "PDPA:16(c)": "Section 16(c) covers erasure where processing is unlawful — since the processing lacks legal basis, you have a compounded right to demand immediate deletion.",
-        "PDPA:13(1)": "Section 13(1) gives you the right to know exactly what data of yours is being processed. Use this right to establish the full scope of the unauthorized processing activity.",
-        "RTI:5(1)(e)": "Section 5(1)(e) provides special protection for sensitive categories of data such as medical information. If your sensitive personal data is being processed without authorization, this provision provides heightened protection.",
-    },
-
-    "DATA_EXPOSURE": {
-        "PDPA:6(1)a)": "Section 6(1)(a) requires that your data be held only for a specified purpose. Its exposure to unauthorized parties is evidence that the controls required to enforce this limitation were absent.",
-        "PDPA:6(1)b)": "Section 6(1)(b) requires an explicitly stated purpose. If your data was accessible beyond its stated purpose and then exposed, this provision is violated.",
-        "PDPA:7(a)": "Section 7(a) requires processing to be confined to the defined purpose. Exposure of your data to unauthorized parties constitutes processing beyond the defined scope.",
-        "PDPA:7(c)": "Section 7(c) requires strict proportionality and purpose-limitation. Exposure of your data to unintended recipients violates both the proportionality and confinement requirements.",
-        "PDPA:10(a)": "Section 10(a) is the direct basis for your claim — the data controller had a legal duty to maintain confidentiality and integrity of your personal data. The exposure demonstrates a breach of this core obligation.",
-        "PDPA:10(b)": "Section 10(b) requires active measures to prevent unauthorized disclosure. The fact that your data was exposed is direct evidence that these mandatory safeguards were inadequate or absent.",
-        "PDPA:8(a)": "Section 8(a) requires that personal data be kept accurate. If your exposed data was inaccurate or outdated at the time of exposure, this compounds the violation.",
-        "PDPA:13(1)": "Section 13(1) gives you the right to demand a full account from the data controller of what personal data of yours was exposed and to whom.",
-        "CCA:7(a)": "Section 7(a) covers situations where a computer was used without authorization to access or distribute your personal data — the act causing the exposure is a criminal offence under this section.",
-        "CCA:7(c)": "Section 7(c) directly covers the acquisition or possession of your personal data obtained through unauthorized computer access — recipients of your exposed data may be liable under this.",
-        "PDPA:9": "Section 9 requires timely deletion of data no longer needed. If the exposed data was held longer than necessary, the retention itself was unlawful prior to the exposure.",
-        "PDPA:11(a)": "Section 11(a) requires the controller to inform you of processing activities. Following the exposure, you have an enhanced right to full transparency about what was exposed and to whom.",
-        "PDPA:14(1)": "Section 14(1) gives you the right to object to continued processing of your exposed data — demand that any further use of the exposed data be halted immediately.",
-        "PDPA:16(a)": "Section 16(a) gives you the right to demand erasure of your exposed data from all systems — including any third parties who received it.",
-        "TCA:49(c)": "Section 49(c) prohibits unlawful disclosure of data transmitted over telecommunications networks — if your data was exposed via a telecom channel, this provision applies.",
-        "TCA:52(a)": "Section 52(a) covers unlawful intrusion into telecommunications systems. If the exposure occurred through unauthorized access to a telecoms platform, this section applies to the perpetrator.",
-    },
-
-    "DOXXING": {
-        "OSA:20(1)": "Section 20(1) is the primary provision for doxxing — it directly criminalises communicating statements or personal information intended to cause harassment, alarm, or distress. Publishing your private details publicly to invite harassment is a clear violation.",
-        "OSA:19": "Section 19 criminalises circulating false reports. If false claims accompanied the publication of your personal details, this section may apply.",
-        "OSA:18(a)": "Section 18(a) applies when doxxing involves impersonation — if fake accounts using your identity were created alongside the doxxing, this section covers that element.",
-        "OSA:18(c)": "Section 18(c) covers misrepresentation of identity. If the doxxer used your photos or details to create a false representation, this section applies.",
-        "PDPA:10(a)": "Section 10(a) imposes a legal duty on data controllers to maintain the confidentiality of your personal data. The exposure of your private details — address, phone, NIC — demonstrates a failure to meet this obligation.",
-        "PDPA:10(b)": "Section 10(b) requires measures to prevent unauthorized disclosure. The public posting of your personal information is direct evidence that these safeguards were inadequate.",
-        "PDPA:7(a)": "Section 7(a) requires that processing of your data be confined to the declared purpose. Publishing your personal details publicly goes far beyond any consented purpose.",
-        "PDPA:11(a)": "Section 11(a) requires transparency about how data is processed. You were never informed your data would be published publicly — this violates your right to be informed.",
-        "PDPA:16(a)": "Section 16(a) gives you the right to demand immediate erasure of your published personal data from all platforms and systems.",
-        "PDPA:14(1)": "Section 14(1) gives you the right to object to the continued processing and display of your personal information on any platform.",
-        "PDPA:6(1)a)": "Section 6(1)(a) requires data to be held only for a specified purpose. Using your data for public shaming or harassment was never a legitimate purpose.",
-        "RTI:5(1)(a)": "Section 5(1)(a) restricts the disclosure of personal information. The public posting of your private details violates the privacy protections established by this section.",
-        "CCA:7(a)": "Section 7(a) covers unauthorized computer use to access or distribute personal data. If your details were obtained through unauthorized access, this criminal offence applies.",
-        "CCA:7(b)": "Section 7(b) covers dealing in unlawfully obtained computer data. Anyone who received and further shared your doxxed information may be liable under this section.",
-    },
-
-    "HARASSMENT": {
-        "OSA:20(1)": "Section 20(1) is the most directly applicable provision — it specifically criminalises communicating statements that cause harassment, alarm, or distress. The threatening messages, abusive content, or intimidating communications you experienced are textbook violations.",
-        "OSA:19": "Section 19 criminalises circulating false reports intended to cause public alarm. If the harassment includes spreading false information, this section applies.",
-        "OSA:18(a)": "Section 18(a) applies when harassment involves impersonation — if fake accounts using your identity were created to facilitate the harassment, this section covers that element.",
-        "PDPA:10(a)": "Section 10(a) requires data controllers to maintain confidentiality. If your personal data was leaked or shared to enable the harassment, the controller failed this legal obligation.",
-        "PDPA:10(b)": "Section 10(b) requires safeguards against unauthorized disclosure. The use of your personal data for harassment demonstrates inadequate protection measures.",
-        "PDPA:7(a)": "Section 7(a) requires processing to be confined to the declared purpose. Using your personal data to harass you goes far beyond any legitimate purpose.",
-        "PDPA:11(a)": "Section 11(a) requires transparency. You were never informed your data would be used for harassment — this is a violation of your right to be informed.",
-        "PDPA:16(a)": "Section 16(a) gives you the right to demand erasure of any personal data being used in harassment campaigns.",
-        "PDPA:14(1)": "Section 14(1) gives you the right to object to continued use of your personal data — demand that all processing related to the harassment cease immediately.",
-        "RTI:5(1)(a)": "Section 5(1)(a) protects your private information from unauthorized disclosure. The exposure and misuse of your data for harassment violates these privacy protections.",
-        "CCA:7(a)": "Section 7(a) covers unauthorized computer use to access your personal data. If the harasser obtained your information through unauthorized access, this criminal offence applies.",
-        "TCA:46B": "Section 46B criminalises using telecommunications to deceive or mislead. Harassment via phone calls, SMS, or messaging platforms is directly covered by this provision.",
-        "TCA:49(c)": "Section 49(c) prohibits unauthorized disclosure of communications. If your private messages or communications were shared as part of the harassment, this section applies.",
-    },
-
-    "IDENTITY_THEFT": {
-        "CCA:4(a)": "Section 4(a) penalises unauthorized access to a computer with intent to commit a further offence. Accessing your identity data to commit fraud is a direct violation of this section.",
-        "CCA:4(b)": "Section 4(b) covers unauthorized access with intent to facilitate a further offence. Using your stolen identity details to open accounts or obtain services triggers this section.",
-        "CCA:3(a)": "Section 3(a) criminalises the initial unauthorized access to computer systems where your identity data was stored or obtained.",
-        "CCA:10": "Section 10 covers unauthorized disclosure of access codes or identity information that enabled the theft of your identity.",
-        "TCA:46B": "Section 46B criminalises using telecommunications to deceive — SIM registration, phone-based fraud, or telecom services obtained using your stolen identity fall under this provision.",
-        "TCA:46C": "Section 46C penalises providing false information to obtain telecom services. If your identity was used to register a SIM card or phone number, this section directly applies.",
-        "TCA:52(a)": "Section 52(a) covers unauthorized intrusion into telecom systems — accessing telecom services using your stolen identity constitutes such intrusion.",
-        "PDPA:10(a)": "Section 10(a) requires confidentiality of your personal data. The organisation that allowed your identity data to be stolen breached this legal obligation.",
-        "PDPA:10(b)": "Section 10(b) requires measures to prevent loss or unauthorized disclosure. The successful theft of your identity data proves these measures were inadequate.",
-        "PDPA:7(a)": "Section 7(a) requires processing to be confined to the defined purpose. Your identity data was used for fraudulent purposes well beyond any legitimate scope.",
-        "PDPA:6(1)a)": "Section 6(1)(a) requires a specified purpose for data collection. If identity data was collected poorly and then stolen, the purpose limitation was already violated.",
-        "PDPA:6(1)b)": "Section 6(1)(b) requires the purpose to be explicitly stated. Inadequate purpose definition at the point of collection compounds the liability for the identity theft.",
-        "PDPA:13(1)": "Section 13(1) gives you the right to know which of your personal data was compromised and used for the identity theft.",
-        "CCA:7(a)": "Section 7(a) covers unauthorized computer use to access or copy your identity documents — the act of stealing your digital identity data is criminalised by this provision.",
-        "ETA:12(1)(a)": "Section 12(1)(a) governs the attribution of electronic records. Transactions or records falsely created using your stolen identity are addressed by this section.",
-        "ETA:12(1)(b)": "Section 12(1)(b) covers authorised scope of electronic records. Records created using your identity without your authority exceed any authorised scope.",
-        "ETA:12(2)(a)": "Section 12(2)(a) provides grounds to challenge records falsely attributed to you due to the identity theft.",
-        "TCA:52(d)": "Section 52(d) covers telecoms intrusion with intent to cause harm — using your stolen identity to access telecom services constitutes such intrusion.",
-    },
-
-    "ACCOUNT_TAKEOVER": {
-        "CCA:3(a)": "Section 3(a) is the foundational offence — unauthorized access to your account is a direct criminal offence under this section.",
-        "CCA:3(b)": "Section 3(b) covers unauthorized access to information held in a computer — accessing your account data, messages, or files without your consent is covered here.",
-        "CCA:4(a)": "Section 4(a) penalises unauthorized access with intent to commit a further offence — if your account was used for fraud, harassment, or theft, this heavier charge applies.",
-        "CCA:4(b)": "Section 4(b) covers unauthorized access to facilitate further offences. The combined act of account hijacking plus further misuse is penalised under this provision.",
-        "CCA:5": "Section 5 covers causing a computer to perform unauthorized functions. Using your hijacked account to send messages, make transfers, or post content is a violation.",
-        "CCA:10": "Section 10 covers unauthorized disclosure of credentials. If your password or recovery information was leaked to enable the takeover, this section applies.",
-        "TCA:52(a)": "Section 52(a) covers unauthorized intrusion into telecom systems. If your account was accessed through phone or messaging platforms, this section applies.",
-        "TCA:52(d)": "Section 52(d) covers telecoms intrusion with intent to cause harm. If the account takeover was used to harm you or your contacts, this provision applies.",
-        "TCA:46B": "Section 46B covers deception via telecommunications. If your hijacked account was used to send deceptive messages, this section applies.",
-        "TCA:46C": "Section 46C covers false information to obtain telecom services. If credentials were falsely obtained to facilitate the takeover, this applies.",
-        "ETA:12(1)(a)": "Section 12(1)(a) governs proper attribution of electronic records. Actions taken through your hijacked account were falsely attributed to you.",
-        "ETA:12(1)(b)": "Section 12(1)(b) covers the scope of authorized electronic actions. The attacker exceeded any authorized scope by hijacking and misusing your account.",
-        "PDPA:10(a)": "Section 10(a) requires confidentiality of your credentials and account data. The platform that allowed the takeover failed this legal obligation.",
-        "PDPA:10(b)": "Section 10(b) requires measures to prevent unauthorized access. A successful account takeover proves these security measures were inadequate.",
-        "PDPA:13(1)": "Section 13(1) gives you the right to know what data was accessed or modified during the account takeover.",
-        "CCA:7(a)": "Section 7(a) covers unauthorized computer use. Accessing and operating your account without authorization is a criminal offence under this section.",
-        "CCA:7(b)": "Section 7(b) covers dealing in unlawfully obtained data. If your account data was sold or shared to facilitate the takeover, this section applies.",
-    },
 }
 
 # ── Impact Classification ────────────────────────────────────────────────────
@@ -456,6 +252,94 @@ def _build_risk_summary(
     )
 
 
+# ──────────────────────────────────────────────────────────────────────────────
+# Helper functions for law-grounded explanations
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _extract_legal_requirements(full_text: str, description: str, title: str) -> list:
+    """
+    Extract key legal requirements/obligations from the actual legal text.
+    Returns a list of requirement phrases (use first one as primary).
+    """
+    requirements = []
+    
+    # Clean up text
+    full_text = (full_text or "").strip()
+    description = (description or "").strip()
+    title = (title or "").strip()
+    
+    # Priority 1: Look for explicit requirements in full_text
+    if full_text:
+        # Match sentences with "shall", "must", "required to", "obligation"
+        import re
+        sentences = re.split(r'[.;]\s+', full_text)
+        for sent in sentences:
+            sent_lower = sent.lower().strip()
+            if any(req in sent_lower for req in ("shall", "must", "obligation", "require", "shall not", "must not")):
+                # Trim to reasonable length and clean up
+                cleaned = re.sub(r'\s+', ' ', sent.strip())
+                cleaned = re.sub(r'^[a-z]\)\s*', '', cleaned)  # Remove "a) " prefix
+                if len(cleaned) > 20 and len(cleaned) < 200:
+                    requirements.append(cleaned)
+                    break
+    
+    # Priority 2: Use description if it contains key legal concepts
+    if not requirements and description:
+        desc_lower = description.lower()
+        if any(w in desc_lower for w in ("must", "shall", "require", "obligation", "cannot", "may not")):
+            cleaned = re.sub(r'\s+', ' ', description.strip())
+            if len(cleaned) > 20:
+                requirements.append(cleaned)
+    
+    # Priority 3: Use title if it's specific enough
+    if not requirements and title:
+        title_lower = title.lower()
+        if any(w in title_lower for w in ("obligation", "requirement", "must", "duty")):
+            if len(title) > 20:
+                requirements.append(title)
+    
+    return requirements
+
+
+def _extract_key_phrase(full_text: str, keywords: str) -> str:
+    """
+    Extract a key phrase from full_text that contains any of the keywords.
+    Keywords are pipe-separated, e.g., "pretend|fake|deceive"
+    """
+    if not full_text:
+        return ""
+    
+    import re
+    keyword_list = [kw.strip() for kw in keywords.split("|")]
+    sentences = re.split(r'[.;]\s+', full_text)
+    
+    for sent in sentences:
+        sent_lower = sent.lower()
+        if any(kw in sent_lower for kw in keyword_list):
+            # Clean up and trim
+            cleaned = re.sub(r'\s+', ' ', sent.strip())
+            cleaned = re.sub(r'^[a-z]\)\s*', '', cleaned)  # Remove subsection prefix
+            if len(cleaned) < 150:
+                return cleaned
+            # If too long, extract just the relevant part
+            for kw in keyword_list:
+                if kw in sent_lower:
+                    words = sent.split()
+                    for i, word in enumerate(words):
+                        if kw in word.lower():
+                            # Extract 5 words before and after
+                            start = max(0, i - 5)
+                            end = min(len(words), i + 6)
+                            phrase = " ".join(words[start:end])
+                            return phrase
+    
+    # Fallback: return first sentence if nothing matched
+    if sentences:
+        return re.sub(r'^[a-z]\)\s*', '', sentences[0].strip())[:150]
+    
+    return ""
+
+
 class ExplanationGenerator:
     """Generates user-friendly, clause+scenario-specific explanations."""
 
@@ -501,15 +385,11 @@ class ExplanationGenerator:
             existing_expl = clause.get("explanation", "")
             clause_tags = set(clause.get("tags", []))
 
-            # ── Why relevant: scenario+clause specific lookup ──
-            key = f"{law_code}:{section}"
-            scenario_reasonings = _CLAUSE_REASONING.get(scenario_key, {})
-            why = scenario_reasonings.get(
-                key,
-                self._build_fallback_reasoning(
-                    tag_set, clause_tags, scenario_key, impersonate, img_exposed,
-                    clause=clause,
-                ),
+            # ── Why relevant: rule-driven generation based on context ──
+            # Always use rule-driven dynamic generation for consistency and maintainability
+            why = self._build_fallback_reasoning(
+                tag_set, clause_tags, scenario_key, impersonate, img_exposed,
+                clause=clause,
             )
 
             # ── Classify clause type and generate template-based explanation ──
@@ -571,130 +451,278 @@ class ExplanationGenerator:
         clause: dict = None,
     ) -> str:
         """
-        Build a specific, varied fallback explanation when no hand-written
-        reasoning exists for this (scenario, clause) pair.
-
-        Uses the clause's own title/description + matched PII data + scenario
-        context to construct a unique explanation per clause.
+        Build SPECIFIC, CLAUSE-FOCUSED explanations driven by the ACTUAL LEGAL TEXT.
+        
+        Grounds explanations in the real legal requirements from full_text/description
+        and explains why they apply to the user's specific incident.
         """
         clause = clause or {}
-        clause_title = clause.get("title", "")
-        clause_desc = clause.get("description", "")
+        clause_title = clause.get("title", "").strip()
+        clause_desc = clause.get("description", "").strip()
+        full_text = clause.get("full_text", "").strip()
+        penalty_text = clause.get("penalty", "").strip()
         law_name = clause.get("law_name", clause.get("law_code", ""))
         section = clause.get("section", "")
+        law_code = clause.get("law_code", "")
 
-        matched = sorted(user_tags & clause_tags)
-        readable = [_TAG_LABELS.get(t, t) for t in matched] if matched else []
+        matched_tags = sorted(user_tags & clause_tags)
+        # Exclude attack-type tags (impersonate, img_exposed) from PII list — they're not exposed data
+        matched_pii = [
+            _TAG_LABELS.get(t, t) for t in matched_tags 
+            if t not in ("impersonate", "img_exposed")
+        ] if matched_tags else []
+        pii_str = ", ".join(matched_pii) if matched_pii else ""
 
+        # ──────────────────────────────────────────────────────────────────────
+        # Deeper clause type classification
+        # ──────────────────────────────────────────────────────────────────────
+        desc_lower = clause_desc.lower()
+        full_lower = full_text.lower()
+        penalty_lower = penalty_text.lower()
+        title_lower = clause_title.lower()
+        
+        is_criminal = any(w in desc_lower or w in penalty_lower or w in title_lower or w in full_lower
+                         for w in ("criminal", "offence", "offense", "penalise", "penalize", "imprisonment", "unlawful", "commit"))
+        is_obligation = any(w in desc_lower or w in title_lower or w in full_lower
+                           for w in ("must", "require", "shall", "obligation", "maintain", "establish", "imposed", "ensure"))
+        is_right = any(w in desc_lower or w in title_lower or w in full_lower
+                      for w in ("right", "entitle", "may request", "may demand", "entitled to", "entitled", "demand"))
+        is_procedure = any(w in desc_lower or w in title_lower or w in full_lower
+                          for w in ("process", "procedure", "notify", "inform", "report", "disclosure", "notice"))
+        is_security = any(w in desc_lower or w in title_lower or w in penalty_lower or w in full_lower
+                         for w in ("security", "safeguard", "protect", "confidentiality", "integrity", "prevent loss", "unauthorized access"))
+
+        # ──────────────────────────────────────────────────────────────────────
+        # Extract SPECIFIC legal requirements from ACTUAL legal text
+        # ──────────────────────────────────────────────────────────────────────
+        legal_requirements = _extract_legal_requirements(full_text, clause_desc, clause_title)
+        
+        # ──────────────────────────────────────────────────────────────────────
+        # SUBSECTION-SPECIFIC BEHAVIOR DETECTION: Generate distinct explanations
+        # ──────────────────────────────────────────────────────────────────────
+        subsection_behavior = ""
+        subsection_framing = ""
+        
+        if section and "(" in section and ")" in section:
+            # Extract subsection letter: 18(a) → a, 18(b) → b, etc.
+            match = re.search(r'\(([a-z]+)\)', section.lower())
+            if match:
+                subsection_letter = match.group(1)
+                desc_lower_check = clause_desc.lower() if clause_desc else ""
+                
+                # ── Behavior-specific analysis: Check description for specific behaviors ──
+                if "pretend" in desc_lower_check or "fake" in desc_lower_check:
+                    subsection_behavior = "FALSE_IDENTITY"  # Fake persona
+                elif "substitut" in desc_lower_check:  # Matches "substitute", "substituting", etc.
+                    subsection_behavior = "IDENTITY_SWAP"   # Replace real person
+                elif "misrepresent" in desc_lower_check or "falsely" in desc_lower_check:
+                    subsection_behavior = "MISREPRESENT"    # Wrong use of real identity
+                
+                # As safety net: Use section letter + title patterns to determine behavior
+                # This ensures OSA 18 subsections get properly identified
+                if not subsection_behavior and "personation" in clause_title.lower():
+                    if subsection_letter == "a":
+                        subsection_behavior = "FALSE_IDENTITY"
+                    elif subsection_letter == "b":
+                        subsection_behavior = "IDENTITY_SWAP"
+                    elif subsection_letter == "c":
+                        subsection_behavior = "MISREPRESENT"
+                
+                # Map subsection letters to role distinctions for fallback
+                subsection_framing = {
+                    "a": "as the primary/foundational provision",
+                    "b": "as a secondary provision extending the scope of",
+                    "c": "as an additional specific case concerning",
+                    "d": "as a supplementary provision addressing",
+                    "e": "as a broader application of",
+                    "f": "as a specific enforcement mechanism for",
+                    "g": "as a qualified exception or limitation to",
+                    "h": "as a further elaboration on",
+                }.get(subsection_letter, "")
+        
+        # ──────────────────────────────────────────────────────────────────────
+        # PART A: LAW-GROUNDED explanation with actual legal requirements
+        # ──────────────────────────────────────────────────────────────────────
         parts = []
 
-        # ── Sentence 1: Link specific PII data to the clause's purpose ──
-        if readable and clause_title:
-            data_str = ", ".join(readable)
-            parts.append(
-                f"Your exposed personal data — specifically {data_str} — "
-                f"falls within the scope of this provision, which addresses "
-                f"{clause_title.lower().rstrip('.')}."
-            )
-        elif clause_title:
-            parts.append(
-                f"This provision addresses {clause_title.lower().rstrip('.')}, "
-                f"which is directly applicable to your reported incident."
-            )
-        elif readable:
-            data_str = ", ".join(readable)
-            parts.append(
-                f"The exposure of {data_str} engages this legal provision."
-            )
-
-        # ── Sentence 2: Explain what the law requires/prohibits ──
-        if clause_desc:
-            # Use the clause description to explain obligation/prohibition
-            desc_lower = clause_desc.lower()
-            if any(w in desc_lower for w in ("prohibit", "offence", "criminal", "penalis")):
+        if matched_pii and clause_title:
+            
+            # Criminal provisions: grounded in actual legal text
+            if is_criminal:
+                if subsection_behavior == "FALSE_IDENTITY":
+                    # Subsection (a): Pretending/fake persona
+                    parts.append(
+                        f"The perpetrator used your {pii_str} to create a **fake online identity** — posing as you to deceive others. "
+                        f"{law_name} Section {section} states: \"{_extract_key_phrase(full_text, 'pretend|fake')}\" "
+                        f"This false impersonation is a serious criminal offence punishable by imprisonment or substantial fines."
+                    )
+                elif subsection_behavior == "IDENTITY_SWAP":
+                    # Subsection (b): Substituting/swapping identities
+                    parts.append(
+                        f"Your {pii_str} were used to **replace another person's identity** in online transactions or communications. "
+                        f"{law_name} Section {section} criminalizes: \"{_extract_key_phrase(full_text, 'substitut|swap')}\" "
+                        f"This identity substitution is a distinct criminal violation because it directly deceives platforms and other users."
+                    )
+                elif subsection_behavior == "MISREPRESENT":
+                    # Subsection (c): Misrepresenting/false representation
+                    parts.append(
+                        f"Your {pii_str} were **misrepresented** online — your identity was falsely presented or your personal details wrongly attributed. "
+                        f"{law_name} Section {section} prohibits: \"{_extract_key_phrase(full_text, 'misrepresent|represent')}\" "
+                        f"This false representation constitutes a criminal offence, distinct from simple impersonation."
+                    )
+                elif legal_requirements:
+                    # Use extracted legal requirements for other criminal cases
+                    req = legal_requirements[0]
+                    parts.append(
+                        f"Your exposure of {pii_str} violates {law_name} Section {section}, which requires: \"{req}\" "
+                        f"The exposure of your data during your {scenario_key.lower().replace('_', ' ')} incident directly breaches this criminal provision."
+                    )
+                else:
+                    parts.append(
+                        f"The exposure of your {pii_str} is a direct criminal violation under {law_name} Section {section}: {clause_title}."
+                    )
+            
+            # Obligation/duty provisions: grounded in actual legal text
+            elif is_obligation:
+                if legal_requirements:
+                    req = legal_requirements[0]
+                    parts.append(
+                        f"{law_name} Section {section} \"{clause_title}\" requires: \"{req}\" "
+                        f"Your organization's exposure of your {pii_str} proves they breached this legal obligation. "
+                        f"This breach creates direct liability for the data controller responsible for your information."
+                    )
+                else:
+                    parts.append(
+                        f"Your data holder violated {law_name} Section {section}: \"{clause_title}.\" "
+                        f"The exposure of your {pii_str} demonstrates they failed to meet this legal requirement."
+                    )
+            
+            # Rights provisions: grounded in actual legal text
+            elif is_right:
+                if legal_requirements:
+                    req = legal_requirements[0]
+                    parts.append(
+                        f"Because your {pii_str} was exposed, {law_name} Section {section} grants you a right: \"{req}\" "
+                        f"You can invoke this right immediately to demand remedial action, disclosure, or erasure from the responsible organization."
+                    )
+                else:
+                    parts.append(
+                        f"Your exposure of {pii_str} triggers a direct legal right under {law_name} Section {section}: {clause_title}. "
+                        f"You can exercise this right immediately."
+                    )
+            
+            # Procedural/security provisions: grounded in actual legal text
+            elif is_security or is_procedure:
+                if legal_requirements:
+                    req = legal_requirements[0]
+                    parts.append(
+                        f"{law_name} Section {section} requires: \"{req}\" "
+                        f"The fact that your {pii_str} were exposed shows this requirement was not met, "
+                        f"creating both remedial obligations and legal liability for the responsible organization."
+                    )
+                else:
+                    parts.append(
+                        f"{law_name} Section {section} requires: \"{clause_title.lower()}.\" "
+                        f"The exposure of your {pii_str} demonstrates this requirement was not implemented."
+                    )
+            
+            else:
+                if legal_requirements:
+                    req = legal_requirements[0]
+                    parts.append(
+                        f"{law_name} Section {section} specifies: \"{req}\" "
+                        f"Your {pii_str} fall directly within this provision's scope based on your incident."
+                    )
+                else:
+                    parts.append(
+                        f"The exposure of your {pii_str} falls within {law_name} Section {section}: {clause_title}."
+                    )
+        
+        elif clause_title and legal_requirements:
+            # No matched PII, but strong legal requirement
+            req = legal_requirements[0]
+            if is_criminal:
                 parts.append(
-                    f"Under the {law_name}, Section {section} criminalises this type of conduct "
-                    f"and provides for sanctions against the perpetrator."
+                    f"{law_name} Section {section} defines a criminal offence: \"{req}\" "
+                    f"This applies to the unauthorized conduct in your {scenario_key.lower().replace('_', ' ')} incident."
                 )
-            elif any(w in desc_lower for w in ("obligation", "require", "must", "shall")):
+            elif is_right:
                 parts.append(
-                    f"The {law_name}, Section {section} imposes a legal obligation on data controllers "
-                    f"that is relevant to your situation — a failure to comply constitutes a breach."
+                    f"{law_name} Section {section} grants you: \"{req}\" "
+                    f"This right is directly applicable to your situation."
                 )
-            elif any(w in desc_lower for w in ("right", "entitle", "may request")):
+            elif is_obligation:
                 parts.append(
-                    f"Under the {law_name}, Section {section}, you have a legal right that can be "
-                    f"exercised in response to this incident."
+                    f"{law_name} Section {section} imposes the requirement: \"{req}\" "
+                    f"The incident demonstrates a breach of this legal obligation."
                 )
             else:
                 parts.append(
-                    f"This section of the {law_name} establishes protections that are engaged "
-                    f"by the circumstances of your incident."
+                    f"{law_name} Section {section} establishes: \"{req}\" "
+                    f"This applies directly to your incident."
                 )
+        
+        elif clause_title:
+            parts.append(
+                f"{law_name} Section {section} addresses: {clause_title}. "
+                f"This provision applies specifically to your {scenario_key.lower().replace('_', ' ')} incident type."
+            )
 
-        # ── Sentence 3: Scenario-specific context ──
-        _SCENARIO_CONTEXT = {
+        # ──────────────────────────────────────────────────────────────────────
+        # PART B: Scenario-specific integration (keep existing, concise)
+        # ──────────────────────────────────────────────────────────────────────
+        scenario_context_map = {
             "IDENTITY_IMPERSONATION": (
-                "Because someone is actively impersonating you, provisions addressing "
-                "online personation, identity fraud, and unauthorized use of personal data are applicable."
+                "In your impersonation scenario, this provision creates criminal and civil liability for the perpetrator."
             ),
             "IMAGE_ABUSE": (
-                "The non-consensual sharing of your personal images invokes protections "
-                "against image-based abuse, harassment, and unauthorized data processing."
+                "In your image abuse scenario, this provision protects your right to privacy and dignity in personal content."
             ),
             "ACCOUNT_MISUSE": (
-                "Unauthorized access to your account engages provisions covering "
-                "computer misuse, unauthorized data access, and electronic authentication safeguards."
+                "In your account misuse scenario, this provision applies to unauthorized access and system compromise."
             ),
             "DATABASE_BREACH": (
-                "A data breach of this nature triggers data controller accountability, "
-                "security obligations, and your rights as a data subject to transparency and remedy."
+                "In a data breach scenario like yours, this provision creates direct accountability for the data controller."
             ),
             "UNAUTHORIZED_DATA_PROCESSING": (
-                "Processing your personal data without lawful basis or beyond the declared purpose "
-                "violates fundamental data protection principles and your right to control your data."
+                "In your unauthorized processing scenario, this provision enforces your right to control how your data is used."
             ),
             "DATA_EXPOSURE": (
-                "The unauthorized exposure of your personal data engages security obligations, "
-                "purpose-limitation requirements, and your right to seek remedy and erasure."
+                "In your data exposure scenario, this provision protects against unauthorized disclosure and access."
             ),
             "DOXXING": (
-                "The deliberate public exposure of your private personal information engages "
-                "provisions against online harassment, data protection obligations, and your right to privacy."
+                "In your doxxing scenario, this provision protects against weaponized personal information disclosure."
             ),
             "HARASSMENT": (
-                "Online harassment and threats using your personal data invoke protections "
-                "against cyberbullying, non-consensual content sharing, and data misuse."
+                "In your harassment scenario, this provision protects your safety and dignity from online abuse."
             ),
             "IDENTITY_THEFT": (
-                "The fraudulent use of your stolen identity data triggers provisions covering "
-                "computer crime, telecom fraud, and data controller accountability for failing to protect your data."
+                "In your identity theft scenario, this provision addresses fraudulent misuse of stolen personal identity."
             ),
             "ACCOUNT_TAKEOVER": (
-                "Unauthorized access to and hijacking of your account engages provisions covering "
-                "computer misuse, unauthorized access, and electronic authentication safeguards."
+                "In your account takeover scenario, this provision applies to unauthorized account access and operation."
             ),
         }
-        ctx = _SCENARIO_CONTEXT.get(scenario_key, "")
-        if ctx and len(parts) < 2:
-            parts.append(ctx)
+        
+        scenario_context = scenario_context_map.get(scenario_key, "")
+        if scenario_context and len(parts) <= 2:
+            parts.append(scenario_context)
 
-        # ── Safety net ──
+        # ──────────────────────────────────────────────────────────────────────
+        # Safety net
+        # ──────────────────────────────────────────────────────────────────────
         if not parts:
             if impersonate:
                 parts.append(
-                    "The impersonation activity in this incident directly engages this "
-                    "legal provision, which protects against unauthorized use of personal identity."
+                    f"{law_name} Section {section} directly applies to identity impersonation and fraudulent use of personal identity."
                 )
             elif img_exposed:
                 parts.append(
-                    "The non-consensual exposure of your personal images triggers this provision, "
-                    "which addresses unauthorized sharing and processing of sensitive personal data."
+                    f"{law_name} Section {section} protects against non-consensual sharing and misuse of personal images."
                 )
             else:
                 parts.append(
-                    "This clause addresses the type of data misuse described in your incident "
-                    "and provides a legal basis for seeking remedy."
+                    f"{law_name} Section {section} applies to the unauthorized access, processing, or disclosure of personal data in your incident."
                 )
 
         return " ".join(parts)
