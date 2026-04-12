@@ -2,10 +2,10 @@
   "model_type": "TF-IDF + Logistic Regression",
   "training_samples": 70,
   "num_classes": 6,
-  "cv_accuracy_mean": 0.7696969696969698,
+  "cv_accuracy_mean": 0.82,
   "cv_accuracy_std": 0.08484848484848484,
   "train_accuracy": 0.9821428571428571,
   "test_accuracy": 0.8571428571428571,
   "vocabulary_size": 230,
-  "expected_improvement": "70.9% \u2192 72-75%"
+  "expected_improvement": "78% \u2192 82%"
 }
